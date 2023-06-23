@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://k41whgh8gjtf"
-path="res://.godot/imported/PrintChar21.ttf-fe20c08fa738990c876af90010ce12f7.fontdata"
+path="res://.godot/imported/PrintChar21.ttf-7a847f4190e4bdd7b8aa3695f941d6fb.fontdata"
 
 [deps]
 
-source_file="res://assets/PrintChar21.ttf"
-dest_files=["res://.godot/imported/PrintChar21.ttf-fe20c08fa738990c876af90010ce12f7.fontdata"]
+source_file="res://assets/fonts/PrintChar21.ttf"
+dest_files=["res://.godot/imported/PrintChar21.ttf-7a847f4190e4bdd7b8aa3695f941d6fb.fontdata"]
 
 [params]
 

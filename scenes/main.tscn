@@ -16,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bmkc7nr5d6h5t" path="res://assets/wip/colored/UI/mapProgress.png" id="13_0ihhg"]
 [ext_resource type="Texture2D" uid="uid://ckoww41rdidai" path="res://assets/wip/colored/UI/map.png" id="14_lxyt4"]
 [ext_resource type="Texture2D" uid="uid://nx3cv7nk2t04" path="res://assets/wip/colored/UI/mapBorder.png" id="15_4i5yi"]
-[ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/PrintChar21.ttf" id="16_ho6hm"]
 [ext_resource type="Script" path="res://scripts/testWIP/amountTEST.gd" id="17_76v5i"]
+[ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="17_x163n"]
 
 [sub_resource type="Animation" id="Animation_txamw"]
 length = 0.001
@@ -261,7 +261,7 @@ offset_left = 223.0
 offset_top = 17.0
 offset_right = 433.0
 offset_bottom = 43.0
-theme_override_fonts/font = ExtResource("16_ho6hm")
+theme_override_fonts/font = ExtResource("17_x163n")
 text = "Miles to Oregon"
 
 [node name="amount" type="Label" parent="MainStats"]
@@ -269,7 +269,7 @@ offset_left = 223.0
 offset_top = 42.0
 offset_right = 468.0
 offset_bottom = 85.0
-theme_override_fonts/font = ExtResource("16_ho6hm")
+theme_override_fonts/font = ExtResource("17_x163n")
 theme_override_font_sizes/font_size = 40
 text = "2168.34"
 script = ExtResource("17_76v5i")
