@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://cr7gi1c7jlrpf"]
+[gd_scene load_steps=2 format=3 uid="uid://cr7gi1c7jlrpf"]
+
+[ext_resource type="Texture2D" uid="uid://6r3h0crkwm61" path="res://assets/wip/wagon.png" id="1_uvqf4"]
 
 [node name="main" type="Node2D"]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(516, 284)
+scale = Vector2(12.625, 12.625)
+texture = ExtResource("1_uvqf4")
