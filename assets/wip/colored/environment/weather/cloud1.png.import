@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddwu6q2ldjp3c"
-path="res://.godot/imported/oxenAlt2.png-291792e1bef05d597942eb2184001ec4.ctex"
+uid="uid://bcxvvhadwy6e"
+path="res://.godot/imported/cloud1.png-b0222665a27a62c4c9031b6e0f27c475.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/oxenAlt2.png"
-dest_files=["res://.godot/imported/oxenAlt2.png-291792e1bef05d597942eb2184001ec4.ctex"]
+source_file="res://assets/wip/colored/environment/weather/cloud1.png"
+dest_files=["res://.godot/imported/cloud1.png-b0222665a27a62c4c9031b6e0f27c475.ctex"]
 
 [params]
 

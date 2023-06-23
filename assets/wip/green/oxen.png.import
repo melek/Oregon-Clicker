@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iijlv66dyhl"
-path="res://.godot/imported/hunter.png-753ac792fbd1042fb3dc2c7ad88a2a13.ctex"
+uid="uid://cyblqb3n1d2kr"
+path="res://.godot/imported/oxen.png-2e5ba9158c700c95115cba49bab0cc06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/hunter.png"
-dest_files=["res://.godot/imported/hunter.png-753ac792fbd1042fb3dc2c7ad88a2a13.ctex"]
+source_file="res://assets/wip/green/oxen.png"
+dest_files=["res://.godot/imported/oxen.png-2e5ba9158c700c95115cba49bab0cc06.ctex"]
 
 [params]
 

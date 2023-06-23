@@ -1,11 +1,275 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr7gi1c7jlrpf"]
+[gd_scene load_steps=29 format=3 uid="uid://cr7gi1c7jlrpf"]
 
-[ext_resource type="Texture2D" uid="uid://6r3h0crkwm61" path="res://assets/wip/wagon.png" id="1_uvqf4"]
+[ext_resource type="Texture2D" uid="uid://ddivkdbvp5air" path="res://assets/wip/colored/environment/foreground/plainsRoad.png" id="1_7mqsu"]
+[ext_resource type="Texture2D" uid="uid://blht4rkh803br" path="res://assets/wip/colored/environment/skybox/nightSky.png" id="1_kv0wy"]
+[ext_resource type="Texture2D" uid="uid://5kx7rx766in3" path="res://assets/wip/scaling/Artboard – 54.png" id="2_4uly5"]
+[ext_resource type="Texture2D" uid="uid://cynqawdxbhowf" path="res://assets/wip/colored/environment/background/plains.png" id="2_agadc"]
+[ext_resource type="Texture2D" uid="uid://bse3socjhn3ci" path="res://assets/wip/colored/UI/partyBorder.png" id="3_ulhfo"]
+[ext_resource type="Texture2D" uid="uid://c1evmtlqa1pi5" path="res://assets/wip/colored/wagon/wagon2.png" id="4_shvtf"]
+[ext_resource type="Texture2D" uid="uid://1f3wlsy3uyvb" path="res://assets/wip/colored/wagon/wagon1.png" id="5_tuqto"]
+[ext_resource type="Texture2D" uid="uid://d356xjqnccr1o" path="res://assets/wip/colored/oxen/oxen2.png" id="6_ngir4"]
+[ext_resource type="Texture2D" uid="uid://bkswohyiihrhn" path="res://assets/wip/colored/oxen/oxen1.png" id="7_ijuvi"]
+[ext_resource type="Texture2D" uid="uid://bjbb776je0dj5" path="res://assets/wip/colored/oxen/oxen3.png" id="8_t6ave"]
+[ext_resource type="Texture2D" uid="uid://bp42xlgfne282" path="res://assets/wip/colored/oxen/oxen4.png" id="9_47qlv"]
+[ext_resource type="Texture2D" uid="uid://b378twc25xt5" path="res://assets/wip/colored/UI/mask/mask.png" id="10_k8tcg"]
+[ext_resource type="Texture2D" uid="uid://dmpledvl2n4n0" path="res://assets/wip/colored/UI/mask/Rectangle 156.png" id="11_l5jtx"]
+[ext_resource type="Texture2D" uid="uid://bmkc7nr5d6h5t" path="res://assets/wip/colored/UI/mapProgress.png" id="13_0ihhg"]
+[ext_resource type="Texture2D" uid="uid://ckoww41rdidai" path="res://assets/wip/colored/UI/map.png" id="14_lxyt4"]
+[ext_resource type="Texture2D" uid="uid://nx3cv7nk2t04" path="res://assets/wip/colored/UI/mapBorder.png" id="15_4i5yi"]
+[ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/PrintChar21.ttf" id="16_ho6hm"]
+[ext_resource type="Script" path="res://scripts/testWIP/amountTEST.gd" id="17_76v5i"]
+
+[sub_resource type="Animation" id="Animation_txamw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../wagon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_shvtf")]
+}
+
+[sub_resource type="Animation" id="Animation_pl3b8"]
+resource_name = "wagon"
+length = 0.5
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../wagon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_tuqto"), ExtResource("4_shvtf")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4srhr"]
+_data = {
+"RESET": SubResource("Animation_txamw"),
+"wagon": SubResource("Animation_pl3b8")
+}
+
+[sub_resource type="Animation" id="Animation_ln2sv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../oxen:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_ngir4")]
+}
+
+[sub_resource type="Animation" id="Animation_5t64i"]
+resource_name = "wagon"
+
+[sub_resource type="Animation" id="Animation_u83bo"]
+resource_name = "walk"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../oxen:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_ijuvi"), ExtResource("6_ngir4"), ExtResource("8_t6ave"), ExtResource("9_47qlv")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lf8c5"]
+_data = {
+"RESET": SubResource("Animation_ln2sv"),
+"wagon": SubResource("Animation_5t64i"),
+"walk": SubResource("Animation_u83bo")
+}
+
+[sub_resource type="Animation" id="Animation_hdwgk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+
+[sub_resource type="Animation" id="Animation_e78qm"]
+resource_name = "progressTest"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_egsf3"]
+_data = {
+"RESET": SubResource("Animation_hdwgk"),
+"progressTest": SubResource("Animation_e78qm")
+}
 
 [node name="Main" type="Node2D"]
 texture_filter = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(516, 284)
-scale = Vector2(12.625, 12.625)
-texture = ExtResource("1_uvqf4")
+[node name="Scrolling" type="Node2D" parent="."]
+scale = Vector2(4.5, 4.5)
+
+[node name="Environment" type="Node2D" parent="Scrolling"]
+
+[node name="Skybox" type="Node2D" parent="Scrolling/Environment"]
+
+[node name="sky" type="Sprite2D" parent="Scrolling/Environment/Skybox"]
+position = Vector2(146.844, 81.25)
+texture = ExtResource("1_kv0wy")
+
+[node name="Background" type="Node2D" parent="Scrolling/Environment"]
+
+[node name="mountains" type="Sprite2D" parent="Scrolling/Environment/Background"]
+position = Vector2(92.8889, 40.8889)
+texture = ExtResource("2_agadc")
+centered = false
+
+[node name="mountains2" type="Sprite2D" parent="Scrolling/Environment/Background"]
+position = Vector2(155.556, 40.8889)
+texture = ExtResource("2_agadc")
+centered = false
+
+[node name="Foreground" type="Node2D" parent="Scrolling/Environment"]
+
+[node name="plainsRoad" type="Sprite2D" parent="Scrolling/Environment/Foreground"]
+position = Vector2(164.667, 94.8889)
+texture = ExtResource("1_7mqsu")
+
+[node name="Party" type="Node2D" parent="Scrolling"]
+
+[node name="wagon" type="Sprite2D" parent="Scrolling/Party"]
+position = Vector2(138.222, 83.1111)
+texture = ExtResource("4_shvtf")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrolling/Party/wagon"]
+root_node = NodePath("../../oxen")
+autoplay = "wagon"
+libraries = {
+"": SubResource("AnimationLibrary_4srhr")
+}
+
+[node name="oxen" type="Sprite2D" parent="Scrolling/Party"]
+position = Vector2(122.222, 83.1111)
+texture = ExtResource("6_ngir4")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrolling/Party/oxen"]
+root_node = NodePath("../../wagon")
+autoplay = "walk"
+libraries = {
+"": SubResource("AnimationLibrary_lf8c5")
+}
+
+[node name="partyUI" type="Node2D" parent="Scrolling"]
+
+[node name="mask" type="Sprite2D" parent="Scrolling/partyUI"]
+position = Vector2(46, -1.72853e-06)
+texture = ExtResource("10_k8tcg")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Scrolling/partyUI/mask"]
+position = Vector2(116, 0)
+texture = ExtResource("11_l5jtx")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scrolling/partyUI/mask"]
+position = Vector2(-158.667, 0)
+texture = ExtResource("11_l5jtx")
+centered = false
+
+[node name="partyBorder" type="Sprite2D" parent="Scrolling/partyUI"]
+position = Vector2(92, 54.8889)
+texture = ExtResource("3_ulhfo")
+centered = false
+
+[node name="Scaling" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(207, 0)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("2_4uly5")
+centered = false
+
+[node name="Map" type="Node2D" parent="."]
+scale = Vector2(4.5, 4.5)
+
+[node name="progressBar" type="TextureProgressBar" parent="Map"]
+offset_left = 95.5556
+offset_top = 25.1111
+offset_right = 142.556
+offset_bottom = 65.1111
+value = 6.0
+fill_mode = 1
+texture_progress = ExtResource("13_0ihhg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map/progressBar"]
+autoplay = "progressTest"
+libraries = {
+"": SubResource("AnimationLibrary_egsf3")
+}
+
+[node name="map" type="Sprite2D" parent="Map"]
+position = Vector2(92, 20.8889)
+texture = ExtResource("14_lxyt4")
+centered = false
+
+[node name="MapBorder" type="Sprite2D" parent="Map"]
+position = Vector2(92, 20.8889)
+scale = Vector2(1, 1.00347)
+texture = ExtResource("15_4i5yi")
+centered = false
+
+[node name="MainStats" type="Node2D" parent="."]
+
+[node name="units" type="Label" parent="MainStats"]
+offset_left = 223.0
+offset_top = 17.0
+offset_right = 433.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("16_ho6hm")
+text = "Miles to Oregon"
+
+[node name="amount" type="Label" parent="MainStats"]
+offset_left = 223.0
+offset_top = 42.0
+offset_right = 468.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("16_ho6hm")
+theme_override_font_sizes/font_size = 40
+text = "2168.34"
+script = ExtResource("17_76v5i")

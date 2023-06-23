@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyblqb3n1d2kr"
-path="res://.godot/imported/oxen.png-0302fdf0732d058468d5202ce9cf7fa1.ctex"
+uid="uid://ctsqcohgq2o80"
+path="res://.godot/imported/compass.png-817eaa8a1d2e5729bad75b7da4548fb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/oxen.png"
-dest_files=["res://.godot/imported/oxen.png-0302fdf0732d058468d5202ce9cf7fa1.ctex"]
+source_file="res://assets/wip/green/compass.png"
+dest_files=["res://.godot/imported/compass.png-817eaa8a1d2e5729bad75b7da4548fb1.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6r3h0crkwm61"
-path="res://.godot/imported/wagon.png-d063d30740b89c95d85a5b4a78ae8836.ctex"
+uid="uid://cynqawdxbhowf"
+path="res://.godot/imported/plains.png-770490d0feff435758d527d4b3f42b8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/wagon.png"
-dest_files=["res://.godot/imported/wagon.png-d063d30740b89c95d85a5b4a78ae8836.ctex"]
+source_file="res://assets/wip/colored/environment/background/plains.png"
+dest_files=["res://.godot/imported/plains.png-770490d0feff435758d527d4b3f42b8b.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

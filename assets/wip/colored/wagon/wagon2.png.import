@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctsqcohgq2o80"
-path="res://.godot/imported/compass.png-c24d4dbdcf1905fa295aca0d32ce883f.ctex"
+uid="uid://c1evmtlqa1pi5"
+path="res://.godot/imported/wagon2.png-22d5d47b4abd721604a7f2833676c03e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/compass.png"
-dest_files=["res://.godot/imported/compass.png-c24d4dbdcf1905fa295aca0d32ce883f.ctex"]
+source_file="res://assets/wip/colored/wagon/wagon2.png"
+dest_files=["res://.godot/imported/wagon2.png-22d5d47b4abd721604a7f2833676c03e.ctex"]
 
 [params]
 

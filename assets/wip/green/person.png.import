@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsqrgfuembl2j"
-path="res://.godot/imported/oxenAlt.png-2c5f079f7bf1d1549dc095cd6dd4a581.ctex"
+uid="uid://ddcpxbwie67nt"
+path="res://.godot/imported/person.png-7578b7131fcf506812d4b2d571ed2c4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/oxenAlt.png"
-dest_files=["res://.godot/imported/oxenAlt.png-2c5f079f7bf1d1549dc095cd6dd4a581.ctex"]
+source_file="res://assets/wip/green/person.png"
+dest_files=["res://.godot/imported/person.png-7578b7131fcf506812d4b2d571ed2c4e.ctex"]
 
 [params]
 
