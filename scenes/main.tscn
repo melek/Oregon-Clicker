@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cr7gi1c7jlrpf"]
+[gd_scene load_steps=30 format=3 uid="uid://cr7gi1c7jlrpf"]
 
 [ext_resource type="Texture2D" uid="uid://ddivkdbvp5air" path="res://assets/wip/colored/environment/foreground/plainsRoad.png" id="1_7mqsu"]
 [ext_resource type="Texture2D" uid="uid://blht4rkh803br" path="res://assets/wip/colored/environment/skybox/nightSky.png" id="1_kv0wy"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b378twc25xt5" path="res://assets/wip/colored/UI/mask/mask.png" id="10_k8tcg"]
 [ext_resource type="Texture2D" uid="uid://dmpledvl2n4n0" path="res://assets/wip/colored/UI/mask/Rectangle 156.png" id="11_l5jtx"]
 [ext_resource type="Texture2D" uid="uid://bmkc7nr5d6h5t" path="res://assets/wip/colored/UI/mapProgress.png" id="13_0ihhg"]
+[ext_resource type="Texture2D" uid="uid://n57p088cn55v" path="res://assets/wip/colored/UI/buttons/moveButton.png" id="13_lerhe"]
 [ext_resource type="Texture2D" uid="uid://ckoww41rdidai" path="res://assets/wip/colored/UI/map.png" id="14_lxyt4"]
 [ext_resource type="Texture2D" uid="uid://nx3cv7nk2t04" path="res://assets/wip/colored/UI/mapBorder.png" id="15_4i5yi"]
 [ext_resource type="Script" path="res://scripts/testWIP/amountTEST.gd" id="17_76v5i"]
@@ -217,6 +218,28 @@ centered = false
 position = Vector2(92, 54.8889)
 texture = ExtResource("3_ulhfo")
 centered = false
+
+[node name="moveButton" type="Sprite2D" parent="Scrolling/partyUI"]
+position = Vector2(126.444, 106.889)
+texture = ExtResource("13_lerhe")
+
+[node name="text" type="Node2D" parent="Scrolling/partyUI/moveButton"]
+scale = Vector2(0.15, 0.15)
+
+[node name="units" type="Label" parent="Scrolling/partyUI/moveButton/text"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.1482
+offset_top = -7.4073
+offset_right = 27.8518
+offset_bottom = 11.5927
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_x163n")
+theme_override_font_sizes/font_size = 16
+text = "move"
 
 [node name="Scaling" type="Sprite2D" parent="."]
 visible = false
