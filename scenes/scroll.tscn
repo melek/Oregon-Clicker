@@ -251,7 +251,6 @@ size = Vector2(89, 53)
 [node name="Scroll" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_aw4os")
-baseSpeed = 0
 
 [node name="Environment" type="Node2D" parent="."]
 

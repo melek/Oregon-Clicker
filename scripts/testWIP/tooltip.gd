@@ -45,7 +45,7 @@ func areaExited(area):
 var tips = {
 	"wagon" : "Increase crew capacity",
 	"crew" : "Increase cash chance",
-	"oxen" : "Increase speed",
+	"oxen" : "Move automatically",
 	"hunter" : "Increase hunt chance",
 	"compass" : "Increase luck chance"
 }

@@ -1,5 +1,6 @@
-[gd_scene load_steps=40 format=3 uid="uid://ru44jabxwp8t"]
+[gd_scene load_steps=41 format=3 uid="uid://ru44jabxwp8t"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_8cncc"]
 [ext_resource type="Texture2D" uid="uid://cykgoobxdus1f" path="res://assets/wip/6x scaling/borders/mainMaskBorder.png" id="1_d5j0n"]
 [ext_resource type="PackedScene" uid="uid://cyposbb5khle5" path="res://scenes/scroll.tscn" id="1_hhoak"]
 [ext_resource type="Texture2D" uid="uid://blht4rkh803br" path="res://assets/wip/colored/environment/skybox/nightSky.png" id="1_ioyxr"]
@@ -162,6 +163,7 @@ size = Vector2(115, 33)
 
 [node name="Main" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_8cncc")
 
 [node name="Scroll" parent="." instance=ExtResource("1_hhoak")]
 position = Vector2(276, 330)
@@ -876,6 +878,8 @@ text = "Upgrades"
 metadata/_edit_use_anchors_ = true
 
 [node name="tooltip" parent="." instance=ExtResource("24_khkup")]
+
+[connection signal="updateLength" from="Scroll" to="." method="onLengthUpdate"]
 
 [editable path="Store/Wagon/tooltipArea"]
 [editable path="Store/Crew/tooltipArea"]
