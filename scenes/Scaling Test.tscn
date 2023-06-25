@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ru44jabxwp8t"]
+[gd_scene load_steps=40 format=3 uid="uid://ru44jabxwp8t"]
 
 [ext_resource type="Texture2D" uid="uid://cykgoobxdus1f" path="res://assets/wip/6x scaling/borders/mainMaskBorder.png" id="1_d5j0n"]
 [ext_resource type="PackedScene" uid="uid://cyposbb5khle5" path="res://scenes/scroll.tscn" id="1_hhoak"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bp42xlgfne282" path="res://assets/wip/colored/oxen/oxen4.png" id="9_upo2n"]
 [ext_resource type="Texture2D" uid="uid://bmkc7nr5d6h5t" path="res://assets/wip/colored/UI/mapProgress.png" id="14_bentl"]
 [ext_resource type="Texture2D" uid="uid://ckoww41rdidai" path="res://assets/wip/colored/UI/map.png" id="15_moq38"]
-[ext_resource type="Texture2D" uid="uid://brtjcip0mbx4b" path="res://assets/wip/6x scaling/buttons/moveButtonBorder.png" id="15_y1wkf"]
 [ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="17_bc4kx"]
 [ext_resource type="Script" path="res://scripts/testWIP/amountTEST.gd" id="18_kcne8"]
 [ext_resource type="Texture2D" uid="uid://d2xctqbxlh4sh" path="res://assets/wip/6x scaling/borders/statsBorder.png" id="20_gcjk1"]
@@ -42,7 +41,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_pl3b8"]
-resource_name = "wagon"
+resource_name = "scroll"
 length = 0.5
 loop_mode = 1
 step = 0.25
@@ -62,7 +61,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4srhr"]
 _data = {
 "RESET": SubResource("Animation_txamw"),
-"wagon": SubResource("Animation_pl3b8")
+"scroll": SubResource("Animation_pl3b8")
 }
 
 [sub_resource type="Animation" id="Animation_ln2sv"]
@@ -84,7 +83,7 @@ tracks/0/keys = {
 resource_name = "wagon"
 
 [sub_resource type="Animation" id="Animation_u83bo"]
-resource_name = "walk"
+resource_name = "scroll"
 loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
@@ -103,8 +102,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lf8c5"]
 _data = {
 "RESET": SubResource("Animation_ln2sv"),
-"wagon": SubResource("Animation_5t64i"),
-"walk": SubResource("Animation_u83bo")
+"scroll": SubResource("Animation_u83bo"),
+"wagon": SubResource("Animation_5t64i")
 }
 
 [sub_resource type="Animation" id="Animation_hdwgk"]
@@ -124,8 +123,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_e78qm"]
 resource_name = "progressTest"
-length = 4.0
+length = 60.0
 loop_mode = 1
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -133,7 +133,7 @@ tracks/0/path = NodePath(".:value")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 60),
 "transitions": PackedFloat32Array(1, 1),
 "update": 2,
 "values": [0.0, 100.0]
@@ -210,7 +210,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollingView/Party/wagon"]
 root_node = NodePath("../../oxen")
-autoplay = "wagon"
+autoplay = "scroll"
 libraries = {
 "": SubResource("AnimationLibrary_4srhr")
 }
@@ -222,7 +222,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollingView/Party/oxen"]
 root_node = NodePath("../../wagon")
-autoplay = "walk"
+autoplay = "scroll"
 libraries = {
 "": SubResource("AnimationLibrary_lf8c5")
 }
@@ -241,7 +241,6 @@ texture_progress = ExtResource("14_bentl")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Map/progressBar"]
-autoplay = "progressTest"
 libraries = {
 "": SubResource("AnimationLibrary_egsf3")
 }
@@ -400,28 +399,6 @@ theme_override_fonts/font = ExtResource("17_bc4kx")
 theme_override_font_sizes/font_size = 16
 text = "2"
 horizontal_alignment = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="MoveButton" type="Node2D" parent="."]
-
-[node name="moveButton" type="Sprite2D" parent="MoveButton"]
-position = Vector2(446, 608)
-texture = ExtResource("15_y1wkf")
-centered = false
-
-[node name="label" type="Label" parent="MoveButton"]
-anchors_preset = -1
-anchor_left = -3.63235
-anchor_right = -3.63235
-anchor_bottom = 0.228571
-offset_left = 451.0
-offset_top = 619.0
-offset_right = 766.0
-offset_bottom = 646.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_bc4kx")
-theme_override_font_sizes/font_size = 16
-text = "Move"
 metadata/_edit_use_anchors_ = true
 
 [node name="Borders" type="Node2D" parent="."]
