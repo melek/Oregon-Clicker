@@ -1,5 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://ru44jabxwp8t"]
+[gd_scene load_steps=41 format=3 uid="uid://ru44jabxwp8t"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_8cncc"]
+[ext_resource type="Texture2D" uid="uid://cykgoobxdus1f" path="res://assets/wip/6x scaling/borders/mainMaskBorder.png" id="1_d5j0n"]
+[ext_resource type="PackedScene" uid="uid://cyposbb5khle5" path="res://scenes/scroll.tscn" id="1_hhoak"]
 [ext_resource type="Texture2D" uid="uid://blht4rkh803br" path="res://assets/wip/colored/environment/skybox/nightSky.png" id="1_ioyxr"]
 [ext_resource type="Texture2D" uid="uid://cynqawdxbhowf" path="res://assets/wip/colored/environment/background/plains.png" id="2_iphbq"]
 [ext_resource type="Texture2D" uid="uid://ddivkdbvp5air" path="res://assets/wip/colored/environment/foreground/plainsRoad.png" id="3_stwsm"]
@@ -9,16 +12,19 @@
 [ext_resource type="Texture2D" uid="uid://bkswohyiihrhn" path="res://assets/wip/colored/oxen/oxen1.png" id="7_836y6"]
 [ext_resource type="Texture2D" uid="uid://bjbb776je0dj5" path="res://assets/wip/colored/oxen/oxen3.png" id="8_krth3"]
 [ext_resource type="Texture2D" uid="uid://bp42xlgfne282" path="res://assets/wip/colored/oxen/oxen4.png" id="9_upo2n"]
-[ext_resource type="Texture2D" uid="uid://b378twc25xt5" path="res://assets/wip/colored/UI/mask/mask.png" id="10_70h1n"]
-[ext_resource type="Texture2D" uid="uid://dmpledvl2n4n0" path="res://assets/wip/colored/UI/mask/Rectangle 156.png" id="11_37i7i"]
-[ext_resource type="Texture2D" uid="uid://bse3socjhn3ci" path="res://assets/wip/colored/UI/partyBorder.png" id="12_wgxhm"]
-[ext_resource type="Texture2D" uid="uid://5kx7rx766in3" path="res://assets/wip/scaling/Artboard – 54.png" id="13_y681m"]
 [ext_resource type="Texture2D" uid="uid://bmkc7nr5d6h5t" path="res://assets/wip/colored/UI/mapProgress.png" id="14_bentl"]
 [ext_resource type="Texture2D" uid="uid://ckoww41rdidai" path="res://assets/wip/colored/UI/map.png" id="15_moq38"]
-[ext_resource type="Texture2D" uid="uid://nx3cv7nk2t04" path="res://assets/wip/colored/UI/mapBorder.png" id="16_5fdbc"]
 [ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="17_bc4kx"]
 [ext_resource type="Script" path="res://scripts/testWIP/amountTEST.gd" id="18_kcne8"]
-[ext_resource type="Texture2D" uid="uid://cffd54xb16qr5" path="res://assets/wip/colored/UI/buttons/moveButtonReal.png" id="19_on0x3"]
+[ext_resource type="Texture2D" uid="uid://d2xctqbxlh4sh" path="res://assets/wip/6x scaling/borders/statsBorder.png" id="20_gcjk1"]
+[ext_resource type="Texture2D" uid="uid://cd3ur3uxriv7x" path="res://assets/wip/6x scaling/borders/eventsBorder.png" id="21_80kig"]
+[ext_resource type="PackedScene" uid="uid://r4h7mpy3eitu" path="res://scenes/price_button.tscn" id="21_ic6vl"]
+[ext_resource type="Texture2D" uid="uid://bg54lbt76uxun" path="res://assets/wip/6x scaling/borders/storeBorder.png" id="22_a6paa"]
+[ext_resource type="PackedScene" uid="uid://bd2ioxp6fqm5y" path="res://scenes/upgrades.tscn" id="22_twkgi"]
+[ext_resource type="PackedScene" uid="uid://bbjaaaso2rc56" path="res://scenes/tooltip_area.tscn" id="23_bgddl"]
+[ext_resource type="Texture2D" uid="uid://bw0vjgrdtaq5m" path="res://assets/wip/6x scaling/borders/mapBorder.png" id="23_s0rqu"]
+[ext_resource type="Texture2D" uid="uid://e17ca1eorlfh" path="res://assets/wip/6x scaling/borders/resourcesBorder.png" id="24_cfyw4"]
+[ext_resource type="PackedScene" uid="uid://b87bsgflffktp" path="res://scenes/tooltip.tscn" id="24_khkup"]
 
 [sub_resource type="Animation" id="Animation_txamw"]
 length = 0.001
@@ -36,7 +42,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_pl3b8"]
-resource_name = "wagon"
+resource_name = "scroll"
 length = 0.5
 loop_mode = 1
 step = 0.25
@@ -56,7 +62,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4srhr"]
 _data = {
 "RESET": SubResource("Animation_txamw"),
-"wagon": SubResource("Animation_pl3b8")
+"scroll": SubResource("Animation_pl3b8")
 }
 
 [sub_resource type="Animation" id="Animation_ln2sv"]
@@ -78,7 +84,7 @@ tracks/0/keys = {
 resource_name = "wagon"
 
 [sub_resource type="Animation" id="Animation_u83bo"]
-resource_name = "walk"
+resource_name = "scroll"
 loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
@@ -97,8 +103,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lf8c5"]
 _data = {
 "RESET": SubResource("Animation_ln2sv"),
-"wagon": SubResource("Animation_5t64i"),
-"walk": SubResource("Animation_u83bo")
+"scroll": SubResource("Animation_u83bo"),
+"wagon": SubResource("Animation_5t64i")
 }
 
 [sub_resource type="Animation" id="Animation_hdwgk"]
@@ -118,8 +124,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_e78qm"]
 resource_name = "progressTest"
-length = 4.0
+length = 60.0
 loop_mode = 1
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -127,7 +134,7 @@ tracks/0/path = NodePath(".:value")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 60),
 "transitions": PackedFloat32Array(1, 1),
 "update": 2,
 "values": [0.0, 100.0]
@@ -139,145 +146,743 @@ _data = {
 "progressTest": SubResource("Animation_e78qm")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc36j"]
+size = Vector2(85, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3o5f"]
+size = Vector2(70, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj8v4"]
+size = Vector2(67, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lcja"]
+size = Vector2(97, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf606"]
+size = Vector2(115, 33)
+
 [node name="Main" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_8cncc")
 
-[node name="Scrolling" type="Node2D" parent="."]
-scale = Vector2(4.5, 4.5)
+[node name="Scroll" parent="." instance=ExtResource("1_hhoak")]
+position = Vector2(276, 330)
 
-[node name="Environment" type="Node2D" parent="Scrolling"]
+[node name="mainMask" type="Sprite2D" parent="."]
+texture = ExtResource("1_d5j0n")
+centered = false
 
-[node name="Skybox" type="Node2D" parent="Scrolling/Environment"]
+[node name="ScrollingView" type="Node2D" parent="."]
+visible = false
+scale = Vector2(6, 6)
 
-[node name="sky" type="Sprite2D" parent="Scrolling/Environment/Skybox"]
-position = Vector2(146.844, 81.25)
+[node name="Environment" type="Node2D" parent="ScrollingView"]
+visible = false
+
+[node name="Skybox" type="Node2D" parent="ScrollingView/Environment"]
+
+[node name="sky" type="Sprite2D" parent="ScrollingView/Environment/Skybox"]
+position = Vector2(101.094, 81.25)
 texture = ExtResource("1_ioyxr")
 
-[node name="Background" type="Node2D" parent="Scrolling/Environment"]
+[node name="Background" type="Node2D" parent="ScrollingView/Environment"]
 
-[node name="mountains" type="Sprite2D" parent="Scrolling/Environment/Background"]
-position = Vector2(92.8889, 40.8889)
+[node name="mountains" type="Sprite2D" parent="ScrollingView/Environment/Background"]
+position = Vector2(47.1389, 40.8889)
 texture = ExtResource("2_iphbq")
 centered = false
 
-[node name="mountains2" type="Sprite2D" parent="Scrolling/Environment/Background"]
-position = Vector2(155.556, 40.8889)
+[node name="mountains2" type="Sprite2D" parent="ScrollingView/Environment/Background"]
+position = Vector2(109.806, 40.8889)
 texture = ExtResource("2_iphbq")
 centered = false
 
-[node name="Foreground" type="Node2D" parent="Scrolling/Environment"]
+[node name="Foreground" type="Node2D" parent="ScrollingView/Environment"]
 
-[node name="plainsRoad" type="Sprite2D" parent="Scrolling/Environment/Foreground"]
-position = Vector2(164.667, 94.8889)
+[node name="plainsRoad" type="Sprite2D" parent="ScrollingView/Environment/Foreground"]
+position = Vector2(118.917, 94.8889)
 texture = ExtResource("3_stwsm")
 
-[node name="Party" type="Node2D" parent="Scrolling"]
+[node name="Party" type="Node2D" parent="ScrollingView"]
 
-[node name="wagon" type="Sprite2D" parent="Scrolling/Party"]
-position = Vector2(138.222, 83.1111)
+[node name="wagon" type="Sprite2D" parent="ScrollingView/Party"]
+position = Vector2(92.472, 83.1111)
 texture = ExtResource("4_x1aa7")
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrolling/Party/wagon"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollingView/Party/wagon"]
 root_node = NodePath("../../oxen")
-autoplay = "wagon"
+autoplay = "scroll"
 libraries = {
 "": SubResource("AnimationLibrary_4srhr")
 }
 
-[node name="oxen" type="Sprite2D" parent="Scrolling/Party"]
-position = Vector2(122.222, 83.1111)
+[node name="oxen" type="Sprite2D" parent="ScrollingView/Party"]
+position = Vector2(76.472, 83.1111)
 texture = ExtResource("6_2ouc8")
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrolling/Party/oxen"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollingView/Party/oxen"]
 root_node = NodePath("../../wagon")
-autoplay = "walk"
+autoplay = "scroll"
 libraries = {
 "": SubResource("AnimationLibrary_lf8c5")
 }
 
-[node name="partyUI" type="Node2D" parent="Scrolling"]
-
-[node name="mask" type="Sprite2D" parent="Scrolling/partyUI"]
-position = Vector2(46, -1.72853e-06)
-texture = ExtResource("10_70h1n")
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Scrolling/partyUI/mask"]
-position = Vector2(116, 0)
-texture = ExtResource("11_37i7i")
-centered = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="Scrolling/partyUI/mask"]
-position = Vector2(-158.667, 0)
-texture = ExtResource("11_37i7i")
-centered = false
-
-[node name="partyBorder" type="Sprite2D" parent="Scrolling/partyUI"]
-position = Vector2(92, 54.8889)
-texture = ExtResource("12_wgxhm")
-centered = false
-
-[node name="Scaling" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(207, 0)
-scale = Vector2(4.5, 4.5)
-texture = ExtResource("13_y681m")
-centered = false
-
 [node name="Map" type="Node2D" parent="."]
-scale = Vector2(4.5, 4.5)
 
 [node name="progressBar" type="TextureProgressBar" parent="Map"]
-offset_left = 95.5556
-offset_top = 25.1111
-offset_right = 142.556
-offset_bottom = 65.1111
+offset_left = 298.0
+offset_top = 147.0
+offset_right = 345.0
+offset_bottom = 187.0
+scale = Vector2(6, 6)
 value = 6.0
 fill_mode = 1
 texture_progress = ExtResource("14_bentl")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Map/progressBar"]
-autoplay = "progressTest"
 libraries = {
 "": SubResource("AnimationLibrary_egsf3")
 }
 
-[node name="map" type="Sprite2D" parent="Map"]
-position = Vector2(92, 20.8889)
+[node name="mapTexture" type="Sprite2D" parent="Map"]
+position = Vector2(276, 126)
+scale = Vector2(6, 6)
 texture = ExtResource("15_moq38")
 centered = false
 
-[node name="MapBorder" type="Sprite2D" parent="Map"]
-position = Vector2(92, 20.8889)
-scale = Vector2(1, 1.00347)
-texture = ExtResource("16_5fdbc")
-centered = false
+[node name="progressPercent" type="Label" parent="Map"]
+offset_left = 288.0
+offset_top = 288.0
+offset_right = 498.0
+offset_bottom = 307.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Progress 3.42%"
+metadata/_edit_use_anchors_ = true
 
 [node name="MainStats" type="Node2D" parent="."]
 
 [node name="units" type="Label" parent="MainStats"]
-offset_left = 223.0
-offset_top = 17.0
-offset_right = 433.0
-offset_bottom = 43.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 234.0
+offset_bottom = 50.0
 theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 24
 text = "Miles to Oregon"
+metadata/_edit_use_anchors_ = true
 
 [node name="amount" type="Label" parent="MainStats"]
-offset_left = 223.0
-offset_top = 42.0
-offset_right = 468.0
-offset_bottom = 85.0
+offset_left = 24.0
+offset_top = 60.0
+offset_right = 269.0
+offset_bottom = 103.0
 theme_override_fonts/font = ExtResource("17_bc4kx")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 48
 text = "2168.34"
 script = ExtResource("18_kcne8")
+metadata/_edit_use_anchors_ = true
 
-[node name="scaledUI" type="Node2D" parent="."]
+[node name="PartyStats" type="Node2D" parent="MainStats"]
 
-[node name="moveButton" type="Sprite2D" parent="scaledUI"]
-position = Vector2(554, 473)
-texture = ExtResource("19_on0x3")
+[node name="Wagons" type="Node2D" parent="MainStats/PartyStats"]
+
+[node name="title" type="Label" parent="MainStats/PartyStats/Wagons"]
+offset_left = 708.0
+offset_top = 12.0
+offset_right = 792.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Wagons"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="MainStats/PartyStats/Wagons"]
+offset_left = 778.0
+offset_top = 12.0
+offset_right = 943.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "2"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Crew" type="Node2D" parent="MainStats/PartyStats"]
+
+[node name="title" type="Label" parent="MainStats/PartyStats/Crew"]
+offset_left = 708.0
+offset_top = 34.0
+offset_right = 792.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Crew"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="MainStats/PartyStats/Crew"]
+offset_left = 778.0
+offset_top = 34.0
+offset_right = 943.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "10/16"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Oxen" type="Node2D" parent="MainStats/PartyStats"]
+
+[node name="title" type="Label" parent="MainStats/PartyStats/Oxen"]
+offset_left = 708.0
+offset_top = 56.0
+offset_right = 792.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Oxen"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="MainStats/PartyStats/Oxen"]
+offset_left = 778.0
+offset_top = 56.0
+offset_right = 943.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "5/8"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Hunters" type="Node2D" parent="MainStats/PartyStats"]
+
+[node name="title" type="Label" parent="MainStats/PartyStats/Hunters"]
+offset_left = 708.0
+offset_top = 78.0
+offset_right = 806.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Hunters"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="MainStats/PartyStats/Hunters"]
+offset_left = 778.0
+offset_top = 78.0
+offset_right = 943.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "5"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Compass" type="Node2D" parent="MainStats/PartyStats"]
+
+[node name="title" type="Label" parent="MainStats/PartyStats/Compass"]
+offset_left = 708.0
+offset_top = 100.0
+offset_right = 834.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Compasses"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="MainStats/PartyStats/Compass"]
+offset_left = 778.0
+offset_top = 100.0
+offset_right = 943.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "2"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="statsBorder" type="Sprite2D" parent="Borders"]
+position = Vector2(12, 126)
+texture = ExtResource("20_gcjk1")
 centered = false
+
+[node name="eventsBorder" type="Sprite2D" parent="Borders"]
+position = Vector2(12, 678)
+texture = ExtResource("21_80kig")
+centered = false
+
+[node name="storeBorder" type="Sprite2D" parent="Borders"]
+position = Vector2(696, 126)
+texture = ExtResource("22_a6paa")
+centered = false
+
+[node name="mapBorder" type="Sprite2D" parent="Borders"]
+position = Vector2(276, 126)
+texture = ExtResource("23_s0rqu")
+centered = false
+
+[node name="resourcesBorder" type="Sprite2D" parent="Borders"]
+position = Vector2(12, 427)
+texture = ExtResource("24_cfyw4")
+centered = false
+
+[node name="Stats" type="Node2D" parent="."]
+
+[node name="StatsTitle" type="Label" parent="Stats"]
+offset_left = 30.0
+offset_top = 144.0
+offset_right = 345.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 24
+text = "Stats"
+metadata/_edit_use_anchors_ = true
+
+[node name="Speed" type="Node2D" parent="Stats"]
+position = Vector2(30, 184)
+
+[node name="title" type="Label" parent="Stats/Speed"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Speed"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Stats/Speed"]
+offset_left = 51.0
+offset_right = 216.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "57"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Miles" type="Node2D" parent="Stats"]
+position = Vector2(30, 212)
+
+[node name="title" type="Label" parent="Stats/Miles"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Miles"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Stats/Miles"]
+offset_left = 51.0
+offset_right = 216.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "23.43"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Stat2" type="Node2D" parent="Stats"]
+visible = false
+position = Vector2(30, 240)
+
+[node name="title" type="Label" parent="Stats/Stat2"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Stat2"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Stats/Stat2"]
+offset_left = 51.0
+offset_right = 216.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "23.43"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Stat3" type="Node2D" parent="Stats"]
+visible = false
+position = Vector2(30, 268)
+
+[node name="title" type="Label" parent="Stats/Stat3"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Stat3"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Stats/Stat3"]
+offset_left = 51.0
+offset_right = 216.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "23.43"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Stat4" type="Node2D" parent="Stats"]
+visible = false
+position = Vector2(30, 296)
+
+[node name="title" type="Label" parent="Stats/Stat4"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Stat4"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Stats/Stat4"]
+offset_left = 51.0
+offset_right = 216.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "23.43"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Stat5" type="Node2D" parent="Stats"]
+visible = false
+position = Vector2(30, 324)
+
+[node name="title" type="Label" parent="Stats/Stat5"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Stat5"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Stats/Stat5"]
+offset_left = 51.0
+offset_right = 216.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "23.43"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Stat6" type="Node2D" parent="Stats"]
+visible = false
+position = Vector2(30, 352)
+
+[node name="title" type="Label" parent="Stats/Stat6"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Stat6"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Stats/Stat6"]
+offset_left = 51.0
+offset_right = 216.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "23.43"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Stat7" type="Node2D" parent="Stats"]
+visible = false
+position = Vector2(30, 380)
+
+[node name="title" type="Label" parent="Stats/Stat7"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Stat7
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Stats/Stat7"]
+offset_left = 51.0
+offset_right = 216.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "23.43"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Resources" type="Node2D" parent="."]
+
+[node name="mainTitle" type="Label" parent="Resources"]
+offset_left = 30.0
+offset_top = 445.0
+offset_right = 345.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 24
+text = "Resources"
+metadata/_edit_use_anchors_ = true
+
+[node name="Food" type="Node2D" parent="Resources"]
+position = Vector2(30, 493)
+
+[node name="title" type="Label" parent="Resources/Food"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Food"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Resources/Food"]
+offset_left = 48.0
+offset_right = 140.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "57"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Resources/Food" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="Ammo" type="Node2D" parent="Resources"]
+position = Vector2(30, 535)
+
+[node name="title" type="Label" parent="Resources/Ammo"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Ammo"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Resources/Ammo"]
+offset_left = 48.0
+offset_right = 140.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "57"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Resources/Ammo" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="Parts" type="Node2D" parent="Resources"]
+position = Vector2(30, 577)
+
+[node name="title" type="Label" parent="Resources/Parts"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Parts"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Resources/Parts"]
+offset_left = 48.0
+offset_right = 140.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "57"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Resources/Parts" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="Rafts" type="Node2D" parent="Resources"]
+position = Vector2(30, 619)
+
+[node name="title" type="Label" parent="Resources/Rafts"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Rafts"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="Resources/Rafts"]
+offset_left = 48.0
+offset_right = 140.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "57"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Resources/Rafts" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="Events" type="Node2D" parent="."]
+position = Vector2(24, 690)
+
+[node name="value" type="Label" parent="Events"]
+offset_right = 912.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "◘ You begin your journey."
+metadata/_edit_use_anchors_ = true
+
+[node name="Store" type="Node2D" parent="."]
+
+[node name="Upgrades2" parent="Store" instance=ExtResource("22_twkgi")]
+position = Vector2(714, 446)
+
+[node name="Store" type="Label" parent="Store"]
+offset_left = 714.0
+offset_top = 144.0
+offset_right = 819.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 24
+text = "Store"
+metadata/_edit_use_anchors_ = true
+
+[node name="cash" type="Label" parent="Store"]
+offset_left = 790.0
+offset_top = 151.0
+offset_right = 930.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "$57"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Wagon" type="Node2D" parent="Store"]
+position = Vector2(714, 192)
+
+[node name="title" type="Label" parent="Store/Wagon"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Wagon"
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Store/Wagon" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="tooltipArea" parent="Store/Wagon" instance=ExtResource("23_bgddl")]
+tipName = "wagon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Wagon/tooltipArea"]
+position = Vector2(30.5, 8)
+shape = SubResource("RectangleShape2D_rc36j")
+
+[node name="Crew" type="Node2D" parent="Store"]
+position = Vector2(714, 234)
+
+[node name="title" type="Label" parent="Store/Crew"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Crew"
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Store/Crew" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="tooltipArea" parent="Store/Crew" instance=ExtResource("23_bgddl")]
+tipName = "crew"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Crew/tooltipArea"]
+position = Vector2(25, 7)
+shape = SubResource("RectangleShape2D_d3o5f")
+
+[node name="Oxen" type="Node2D" parent="Store"]
+position = Vector2(714, 276)
+
+[node name="title" type="Label" parent="Store/Oxen"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Oxen"
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Store/Oxen" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="tooltipArea" parent="Store/Oxen" instance=ExtResource("23_bgddl")]
+tipName = "oxen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Oxen/tooltipArea"]
+position = Vector2(23.5, 4.5)
+shape = SubResource("RectangleShape2D_bj8v4")
+
+[node name="Hunter" type="Node2D" parent="Store"]
+position = Vector2(714, 318)
+
+[node name="title" type="Label" parent="Store/Hunter"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Hunter"
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Store/Hunter" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="tooltipArea" parent="Store/Hunter" instance=ExtResource("23_bgddl")]
+tipName = "hunter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Hunter/tooltipArea"]
+position = Vector2(38.5, 5)
+shape = SubResource("RectangleShape2D_2lcja")
+
+[node name="Compass" type="Node2D" parent="Store"]
+position = Vector2(714, 360)
+
+[node name="title" type="Label" parent="Store/Compass"]
+offset_right = 70.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "Compass"
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceButton" parent="Store/Compass" instance=ExtResource("21_ic6vl")]
+position = Vector2(162, -8)
+
+[node name="tooltipArea" parent="Store/Compass" instance=ExtResource("23_bgddl")]
+tipName = "compass"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Compass/tooltipArea"]
+position = Vector2(47.5, 6.5)
+shape = SubResource("RectangleShape2D_kf606")
+
+[node name="Upgrades" type="Label" parent="Store"]
+offset_left = 714.0
+offset_top = 406.0
+offset_right = 819.0
+offset_bottom = 433.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 24
+text = "Upgrades"
+metadata/_edit_use_anchors_ = true
+
+[node name="tooltip" parent="." instance=ExtResource("24_khkup")]
+
+[connection signal="updateLength" from="Scroll" to="." method="onLengthUpdate"]
+
+[editable path="Store/Wagon/tooltipArea"]
+[editable path="Store/Crew/tooltipArea"]
+[editable path="Store/Oxen/tooltipArea"]
+[editable path="Store/Hunter/tooltipArea"]
+[editable path="Store/Compass/tooltipArea"]

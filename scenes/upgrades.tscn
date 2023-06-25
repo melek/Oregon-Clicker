@@ -1,0 +1,215 @@
+[gd_scene load_steps=11 format=3 uid="uid://bd2ioxp6fqm5y"]
+
+[ext_resource type="Texture2D" uid="uid://bsv4ic12we8l5" path="res://assets/wip/6x scaling/upgradeBorder.png" id="1_784nb"]
+[ext_resource type="Script" path="res://scripts/testWIP/Upgrade1.gd" id="1_fsvor"]
+[ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="2_k0oyb"]
+[ext_resource type="Texture2D" uid="uid://djh2d1h7033ug" path="res://assets/wip/6x scaling/buttons/upgradeButton.png" id="3_toml8"]
+[ext_resource type="Texture2D" uid="uid://d2paqhdojjei3" path="res://assets/wip/6x scaling/upgradeMask.png" id="4_ngj8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d13ht"]
+size = Vector2(216, 90)
+
+[sub_resource type="Animation" id="Animation_p8na0"]
+resource_name = "expand"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Upgrade1/text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, -60), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Upgrade1/clickArea/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 114)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Upgrade1/clickArea/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, 45)]
+}
+
+[sub_resource type="Animation" id="Animation_pl5hm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Upgrade1/text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Upgrade1/clickArea/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, 45)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Upgrade1/clickArea/CollisionShape2D:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(216, 90)]
+}
+
+[sub_resource type="Animation" id="Animation_8iydh"]
+resource_name = "retract"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Upgrade1/text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Upgrade1/clickArea/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 54)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Upgrade1/clickArea/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, 15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fglip"]
+_data = {
+"RESET": SubResource("Animation_pl5hm"),
+"expand": SubResource("Animation_p8na0"),
+"retract": SubResource("Animation_8iydh")
+}
+
+[node name="Upgrades" type="Node2D"]
+texture_filter = 1
+
+[node name="Upgrade1" type="Node2D" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 218.0
+offset_bottom = 183.0
+
+[node name="Upgrade1" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_fsvor")
+
+[node name="clickArea" type="Area2D" parent="VBoxContainer/Upgrade1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Upgrade1/clickArea"]
+position = Vector2(108, 45)
+shape = SubResource("RectangleShape2D_d13ht")
+
+[node name="text" type="Node2D" parent="VBoxContainer/Upgrade1"]
+position = Vector2(0, -60)
+
+[node name="UpgradeBorder" type="Sprite2D" parent="VBoxContainer/Upgrade1/text"]
+texture = ExtResource("1_784nb")
+centered = false
+
+[node name="text" type="Label" parent="VBoxContainer/Upgrade1/text"]
+offset_left = 12.0
+offset_top = 38.0
+offset_right = 204.0
+offset_bottom = 86.0
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_k0oyb")
+theme_override_font_sizes/font_size = 16
+text = "Reduced food consumption"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="button" type="Sprite2D" parent="VBoxContainer/Upgrade1"]
+texture = ExtResource("3_toml8")
+centered = false
+
+[node name="title" type="Label" parent="VBoxContainer/Upgrade1"]
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 132.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k0oyb")
+theme_override_font_sizes/font_size = 16
+text = "Boots"
+metadata/_edit_use_anchors_ = true
+
+[node name="value" type="Label" parent="VBoxContainer/Upgrade1"]
+offset_left = 118.0
+offset_top = 8.0
+offset_right = 210.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k0oyb")
+theme_override_font_sizes/font_size = 16
+text = "$24"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Upgrade1"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_fglip")
+}
+
+[node name="UpgradeMask" type="Sprite2D" parent="VBoxContainer/Upgrade1"]
+position = Vector2(0, -90)
+texture = ExtResource("4_ngj8t")
+centered = false
+
+[connection signal="mouse_entered" from="VBoxContainer/Upgrade1/clickArea" to="VBoxContainer/Upgrade1" method="mouseEntered"]
+[connection signal="mouse_exited" from="VBoxContainer/Upgrade1/clickArea" to="VBoxContainer/Upgrade1" method="mouseExited"]
