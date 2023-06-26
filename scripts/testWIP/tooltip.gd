@@ -2,6 +2,19 @@ extends Node2D
 
 var areaName = ""
 
+var tips = {
+	"wagon" : "Increase crew capacity",
+	"crew" : "Increase cash chance",
+	"oxen" : "Move automatically",
+	"hunter" : "Increase hunt chance",
+	"compass" : "Increase luck chance",
+	"foodRate" : "Lower food consumption",
+	"food" : "Consumed by personnel",
+	"ammo" : "Consumed by hunters",
+	"parts" : "Consumed by wagons",
+	"raft" : "Prevent wagon loss"
+}
+
 @onready var sprite = $TooltipBorder
 @onready var detectPos = $tooltipDetect
 @onready var text = $TooltipBorder/text
@@ -42,10 +55,4 @@ func areaExited(area):
 		
 		
 		
-var tips = {
-	"wagon" : "Increase crew capacity",
-	"crew" : "Increase cash chance",
-	"oxen" : "Move automatically",
-	"hunter" : "Increase hunt chance",
-	"compass" : "Increase luck chance"
-}
+
