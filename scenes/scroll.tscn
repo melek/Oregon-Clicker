@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cyposbb5khle5"]
+[gd_scene load_steps=30 format=3 uid="uid://cyposbb5khle5"]
 
 [ext_resource type="Texture2D" uid="uid://bp4qi8xk6lh7n" path="res://assets/wip/colored/environment/background/skyTest.png" id="1_0gf7q"]
 [ext_resource type="Script" path="res://scenes/scrollManager.gd" id="1_aw4os"]
@@ -132,7 +132,7 @@ tracks/1/keys = {
 resource_name = "scroll"
 length = 30.0
 loop_mode = 1
-step = 1.0
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -143,7 +143,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 30),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-366, 138), Vector2(708, 138)]
+"values": [Vector2(-366, 138), Vector2(402, 138)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -155,7 +155,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 30),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1134, 138), Vector2(-59, 138)]
+"values": [Vector2(-1134, 138), Vector2(-366, 138)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5q84q"]
@@ -245,6 +245,29 @@ _data = {
 "wagon": SubResource("Animation_5t64i")
 }
 
+[sub_resource type="Animation" id="Animation_53x7f"]
+resource_name = "jitter"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tiijj"]
+_data = {
+"jitter": SubResource("Animation_53x7f")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvjqv"]
 size = Vector2(89, 53)
 
@@ -310,6 +333,7 @@ libraries = {
 }
 
 [node name="Party" type="Node2D" parent="Environment"]
+position = Vector2(-0.833334, 0)
 
 [node name="wagon" type="Sprite2D" parent="Environment/Party"]
 position = Vector2(276, 168)
@@ -337,11 +361,17 @@ libraries = {
 "": SubResource("AnimationLibrary_lf8c5")
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Environment/Party"]
+libraries = {
+"": SubResource("AnimationLibrary_tiijj")
+}
+
 [node name="ScrollBorder" type="Sprite2D" parent="."]
 texture = ExtResource("8_qigrp")
 centered = false
 
 [node name="speedLabel" type="Label" parent="."]
+visible = false
 offset_left = 12.0
 offset_top = 12.0
 offset_right = 166.0
