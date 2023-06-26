@@ -15,6 +15,11 @@ run/main_scene="res://scenes/Scaling Test.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Constants="*res://scripts/autoloads/Constants.gd"
+State="*res://scripts/autoloads/State.gd"
+
 [display]
 
 window/size/viewport_width=960
