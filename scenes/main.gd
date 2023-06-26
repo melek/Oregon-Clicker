@@ -11,11 +11,9 @@ var remaining = 2169.991
 
 func _physics_process(delta):
 	
-	mainAmount.text = "%8.3-f" % (remaining)
-	
+	mainAmount.text = "%8.2-f" % (remaining)
 	progressPercent.text = "Progress " + "%.2-f" % (100-((remaining/length)*100)) + "%"
 
 
 func onLengthUpdate(newRemaining):
 	remaining = newRemaining
-	print(remaining)

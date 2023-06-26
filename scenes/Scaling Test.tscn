@@ -80,9 +80,6 @@ tracks/0/keys = {
 "values": [ExtResource("6_2ouc8")]
 }
 
-[sub_resource type="Animation" id="Animation_5t64i"]
-resource_name = "wagon"
-
 [sub_resource type="Animation" id="Animation_u83bo"]
 resource_name = "scroll"
 loop_mode = 1
@@ -99,6 +96,9 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("7_836y6"), ExtResource("6_2ouc8"), ExtResource("8_krth3"), ExtResource("9_upo2n")]
 }
+
+[sub_resource type="Animation" id="Animation_5t64i"]
+resource_name = "wagon"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lf8c5"]
 _data = {
