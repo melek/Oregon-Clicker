@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2e4jilnyhjdt"
-path="res://.godot/imported/priceButtonSmall.png-02d7294a4191877f5aff2d87d92380dd.ctex"
+uid="uid://dwfwlkubqgmtr"
+path="res://.godot/imported/priceButton5.png-263f58856e789fad07b05cb1bcfffb40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/6x scaling/buttons/priceButtonSmall.png"
-dest_files=["res://.godot/imported/priceButtonSmall.png-02d7294a4191877f5aff2d87d92380dd.ctex"]
+source_file="res://assets/wip/6x scaling/buttons/priceButtons/priceButton5.png"
+dest_files=["res://.godot/imported/priceButton5.png-263f58856e789fad07b05cb1bcfffb40.ctex"]
 
 [params]
 
