@@ -7,14 +7,22 @@ const game = {
 	"statUnits": { 
 		"mainStat" : ["Miles to Oregon", "Oregons Discovered"]
 	},
+	
+	
+	# I might want to make this a dict later if the prices are custom
 	"upgrades": {
 		"speed" : {
-			"names" : [
+			"names" : [ #These might be too incremental
 				"Reinforced Harness",
 				"High-Speed Bearings",
 				"Wagon Streamlining",
 				"Carbon Fiber Wagon", 
 				"Wagon Thrust Vectoring"
+			],
+			"altNames" : [ #If we want something more dramatic. Maybe sprite changes? Mutation?
+				"Cars",
+				"Rockets",
+				"Dragons"
 			],
 			"multiplier" : 25
 		},
