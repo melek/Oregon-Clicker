@@ -11,6 +11,7 @@ func updateMainValue():
 func updatePartyStats():
 	for child in $PartyStats.get_children():
 		var value = child.get_node("value")
+		var title = child.get_node("title")
 		var valueName = child.get_name()
 		var stateAmount = State.game.units[valueName].amount
 		var crewCap = State.game.units.wagon.amount * 8
@@ -21,8 +22,10 @@ func updatePartyStats():
 			
 			if stateAmount >= crewCap:
 				value.set("theme_override_colors/font_color", Color(255, 0, 0))
+				title.set("theme_override_colors/font_color", Color(255, 0, 0))
 			else:
 				value.set("theme_override_colors/font_color", Color(255, 255, 255))
+				title.set("theme_override_colors/font_color", Color(255, 255, 255))
 				
 		elif valueName == "oxen":
 			value.text = str(stateAmount) + "/" + str(oxenCap)

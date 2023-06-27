@@ -83,3 +83,6 @@ func calculateLength():
 	State.game.remaining -= (moveStats.actualSpeed / 5) * stride
 	State.game.progress += (moveStats.actualSpeed / 5) * stride
 #	emit_signal("updateLength", State.game.remaining)
+
+
+
