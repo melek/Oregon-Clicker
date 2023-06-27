@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://ru44jabxwp8t"]
+[gd_scene load_steps=49 format=3 uid="uid://ru44jabxwp8t"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_8cncc"]
 [ext_resource type="Texture2D" uid="uid://cykgoobxdus1f" path="res://assets/wip/6x scaling/borders/mainMaskBorder.png" id="1_d5j0n"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ckoww41rdidai" path="res://assets/wip/colored/UI/map.png" id="15_moq38"]
 [ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="17_bc4kx"]
 [ext_resource type="Script" path="res://scripts/MainStats.gd" id="17_nraum"]
-[ext_resource type="Texture2D" uid="uid://d2xctqbxlh4sh" path="res://assets/wip/6x scaling/borders/statsBorder.png" id="20_gcjk1"]
+[ext_resource type="Texture2D" uid="uid://c5lwhjgjrfjno" path="res://assets/wip/6x scaling/borders/extendedStatsBorder.png" id="18_fa78g"]
 [ext_resource type="Texture2D" uid="uid://cd3ur3uxriv7x" path="res://assets/wip/6x scaling/borders/eventsBorder.png" id="21_80kig"]
 [ext_resource type="PackedScene" uid="uid://r4h7mpy3eitu" path="res://scenes/price_button.tscn" id="21_ic6vl"]
 [ext_resource type="Texture2D" uid="uid://bg54lbt76uxun" path="res://assets/wip/6x scaling/borders/storeBorder.png" id="22_a6paa"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://b87bsgflffktp" path="res://scenes/tooltip.tscn" id="24_khkup"]
 [ext_resource type="Texture2D" uid="uid://djh2d1h7033ug" path="res://assets/wip/6x scaling/buttons/upgradeButton.png" id="24_shbdw"]
 [ext_resource type="Script" path="res://scripts/Store.gd" id="27_ele6p"]
+[ext_resource type="Script" path="res://scenes/Events.gd" id="27_k8okl"]
 
 [sub_resource type="Animation" id="Animation_txamw"]
 length = 0.001
@@ -384,7 +385,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="statsBorder" type="Sprite2D" parent="Borders"]
 position = Vector2(12, 126)
-texture = ExtResource("20_gcjk1")
+texture = ExtResource("18_fa78g")
 centered = false
 
 [node name="eventsBorder" type="Sprite2D" parent="Borders"]
@@ -403,6 +404,7 @@ texture = ExtResource("23_s0rqu")
 centered = false
 
 [node name="resourcesBorder" type="Sprite2D" parent="Borders"]
+visible = false
 position = Vector2(12, 427)
 texture = ExtResource("24_cfyw4")
 centered = false
@@ -596,6 +598,7 @@ horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Resources" type="Node2D" parent="."]
+visible = false
 script = ExtResource("24_c3n1f")
 
 [node name="mainTitle" type="Label" parent="Resources"]
@@ -734,6 +737,7 @@ shape = SubResource("RectangleShape2D_oftp0")
 
 [node name="Events" type="Node2D" parent="."]
 position = Vector2(24, 690)
+script = ExtResource("27_k8okl")
 
 [node name="value" type="Label" parent="Events"]
 offset_right = 912.0
