@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccvu4xcaema4l"]
+
+[ext_resource type="Script" path="res://scripts/EventLog.gd" id="1_r5jpu"]
+[ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="2_rays3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ql42w"]
+font = ExtResource("2_rays3")
+
+[node name="EventLog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r5jpu")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+alignment = 2
+
+[node name="StartLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "◘ You begin on your journey."
+label_settings = SubResource("LabelSettings_ql42w")

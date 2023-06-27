@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://ru44jabxwp8t"]
+[gd_scene load_steps=50 format=3 uid="uid://ru44jabxwp8t"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_8cncc"]
 [ext_resource type="Texture2D" uid="uid://cykgoobxdus1f" path="res://assets/wip/6x scaling/borders/mainMaskBorder.png" id="1_d5j0n"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://djh2d1h7033ug" path="res://assets/wip/6x scaling/buttons/upgradeButton.png" id="24_shbdw"]
 [ext_resource type="Script" path="res://scripts/Store.gd" id="27_ele6p"]
 [ext_resource type="Script" path="res://scenes/Events.gd" id="27_k8okl"]
+[ext_resource type="PackedScene" uid="uid://ccvu4xcaema4l" path="res://scenes/EventLog.tscn" id="28_oc5b4"]
 
 [sub_resource type="Animation" id="Animation_txamw"]
 length = 0.001
@@ -735,17 +736,24 @@ tipName = "raft"
 position = Vector2(35, 6)
 shape = SubResource("RectangleShape2D_oftp0")
 
-[node name="Events" type="Node2D" parent="."]
-position = Vector2(24, 690)
+[node name="Events" type="Container" parent="."]
+offset_left = 24.0
+offset_top = 690.0
+offset_right = 934.0
+offset_bottom = 828.0
+size_flags_vertical = 8
 script = ExtResource("27_k8okl")
 
 [node name="value" type="Label" parent="Events"]
-offset_right = 912.0
-offset_bottom = 19.0
+visible = false
+layout_mode = 2
 theme_override_fonts/font = ExtResource("17_bc4kx")
 theme_override_font_sizes/font_size = 16
 text = "◘ You begin your journey."
 metadata/_edit_use_anchors_ = true
+
+[node name="EventLog" parent="Events" instance=ExtResource("28_oc5b4")]
+layout_mode = 2
 
 [node name="Store" type="Node2D" parent="."]
 script = ExtResource("27_ele6p")
