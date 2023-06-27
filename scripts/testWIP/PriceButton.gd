@@ -31,6 +31,8 @@ func _process(delta):
 
 func checkBuy():
 	if Input.is_action_just_pressed("click"):
+		
+		
 		var item = get_parent().get_name()
 		if item in State.game.store:
 			var cash = State.game.cash
@@ -53,8 +55,10 @@ func checkBuy():
 
 func onBuyClick(viewport, event, shape_idx):
 	checkBuy()
+	
 
 func buy(item):
+	$AnimationPlayer.play("clicked")
 	State.game.cash -= price
 	State.game.units[item].amount += 1
 

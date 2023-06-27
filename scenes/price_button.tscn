@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://r4h7mpy3eitu"]
+[gd_scene load_steps=9 format=3 uid="uid://r4h7mpy3eitu"]
 
 [ext_resource type="Script" path="res://scripts/testWIP/PriceButton.gd" id="1_vd0oc"]
 [ext_resource type="Texture2D" uid="uid://c2e4jilnyhjdt" path="res://assets/wip/6x scaling/buttons/priceButtons/priceButton1.png" id="2_ptx6e"]
@@ -10,6 +10,43 @@ size = Vector2(54, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc7ga"]
 resource_local_to_scene = true
 size = Vector2(40, 30)
+
+[sub_resource type="Animation" id="Animation_ab7vb"]
+resource_name = "clicked"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.768627), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gto7i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ee54u"]
+_data = {
+"RESET": SubResource("Animation_gto7i"),
+"clicked": SubResource("Animation_ab7vb")
+}
 
 [node name="PriceButton" type="Node2D"]
 texture_filter = 1
@@ -44,5 +81,10 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clickArea"]
 position = Vector2(34, 15)
 shape = SubResource("RectangleShape2D_cc7ga")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ee54u")
+}
 
 [connection signal="input_event" from="clickArea" to="." method="onBuyClick"]
