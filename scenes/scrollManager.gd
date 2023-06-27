@@ -18,8 +18,8 @@ var UPDATE_RATE = 60
 var baseSpeed = 0
 var clickSpeed = 1
 
-var length = 2170
-var remaining = 2170
+#var length = 2170
+#var remaining = 2170
 var clickTimer = 0
 var actualSpeed = 0
 var lastProgress = 0
@@ -50,11 +50,19 @@ func calcBaseSpeed():
 	var oxenAmount = State.game.units.oxen.amount
 	var oxenMultiplier = State.game.units.oxen.statMulti
 	
+	var speedMultiplier = State.game.units.speedUp.statMulti
+	var speedUpAmount = State.game.units.speedUp.amount
+	var combinedSpeedMulti = speedMultiplier * speedUpAmount
+	
 	# Check oxen timer rate
 	# CURRENT: .5 sec
-	moveStats.baseSpeed = (oxenAmount * oxenMultiplier)
-	oxenSpeed = (oxenAmount * float(oxenMultiplier))/30
 	
+	if combinedSpeedMulti > 0:
+		oxenSpeed = ((oxenAmount * float(oxenMultiplier))/30) * combinedSpeedMulti
+		moveStats.baseSpeed = (oxenAmount * oxenMultiplier) * combinedSpeedMulti
+	else:
+		oxenSpeed = ((oxenAmount * float(oxenMultiplier))/30)
+		moveStats.baseSpeed = (oxenAmount * oxenMultiplier)
 #	if oxenTimer > 30:
 #
 #		oxenTimer = 0
@@ -67,9 +75,19 @@ func bonusAnimTimer():
 
 func calcActualSpeed():
 	
+	
 	moveStats.actualSpeed = oxenSpeed + checkClickBonus()
-	State.game.remaining -= moveStats.actualSpeed
 	State.game.progress += moveStats.actualSpeed
+	
+	if State.game.progress > Constants.game.stepLength:
+		var newProgress = State.game.progress - Constants.game.stepLength
+		
+		State.game.progress = newProgress
+		State.game.Remaining = Constants.game.stepLength - newProgress
+		State.game.oregons += 1
+		lastProgress = State.game.progress + 5
+	else:
+		State.game.remaining -= moveStats.actualSpeed
 	
 	
 func calcIncome():
@@ -86,10 +104,11 @@ func updateLabel():
 
 func onButtonInput(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
-		clickBonus = 1
+		var multiplier = State.game.units.clickUp.amount * State.game.units.clickUp.statMulti
+		clickBonus = 1 + multiplier
 
 func checkClickBonus():
-	if clickBonus == 1:
+	if clickBonus > 0:
 		clickBonus = 0
 		return 1
 	else:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://r4h7mpy3eitu"]
 
 [ext_resource type="Script" path="res://scripts/testWIP/PriceButton.gd" id="1_vd0oc"]
-[ext_resource type="Texture2D" uid="uid://c2e4jilnyhjdt" path="res://assets/wip/6x scaling/buttons/priceButtons/priceButton1.png" id="2_hqlih"]
+[ext_resource type="Texture2D" uid="uid://c2e4jilnyhjdt" path="res://assets/wip/6x scaling/buttons/priceButtons/priceButton1.png" id="2_6o4x8"]
 [ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="3_5cuit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tj84"]
@@ -53,7 +53,7 @@ texture_filter = 1
 script = ExtResource("1_vd0oc")
 
 [node name="buttonSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_hqlih")
+texture = ExtResource("2_6o4x8")
 centered = false
 offset = Vector2(14, 0)
 

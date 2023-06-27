@@ -17,8 +17,24 @@ func _physics_process(delta):
 	
 	$Speed/value.text = str(State.game.moveStats.baseSpeed) + " mph"
 	
-	$Miles/value.text = "%.1-f" % (State.game.progress * 0.000568182)
-	$Time/value.text = Time.get_time_string_from_system()
+	checkMiles()
+	
+	checkOregons()
+	
+
+func checkMiles():
+	if State.game.oregons < 1:
+		State.game.totalMiles = State.game.progress * 0.000568182
+	else:
+		State.game.totalMiles = (State.game.progress * 0.000568182) * State.game.oregons
+	
+	$Miles/value.text = "%.1-f" % (State.game.totalMiles)
+
+func checkOregons():
+	$Oregons/value.text = str(State.game.oregons)
+	
+	if State.game.oregons > 0:
+		$Oregons.visible = true
 
 #func getAvgSpeed():
 

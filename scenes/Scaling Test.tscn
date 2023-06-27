@@ -136,7 +136,7 @@ size = Vector2(70, 22)
 size = Vector2(67, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lcja"]
-size = Vector2(97, 30)
+size = Vector2(112, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf606"]
 size = Vector2(115, 33)
@@ -336,19 +336,19 @@ text = "5/8"
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="hunter" type="Node2D" parent="MainStats/PartyStats"]
+[node name="clickUp" type="Node2D" parent="MainStats/PartyStats"]
 
-[node name="title" type="Label" parent="MainStats/PartyStats/hunter"]
+[node name="title" type="Label" parent="MainStats/PartyStats/clickUp"]
 offset_left = 708.0
 offset_top = 78.0
 offset_right = 806.0
 offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("17_bc4kx")
 theme_override_font_sizes/font_size = 16
-text = "Hunters"
+text = "Click Level"
 metadata/_edit_use_anchors_ = true
 
-[node name="value" type="Label" parent="MainStats/PartyStats/hunter"]
+[node name="value" type="Label" parent="MainStats/PartyStats/clickUp"]
 offset_left = 778.0
 offset_top = 78.0
 offset_right = 943.0
@@ -359,19 +359,19 @@ text = "5"
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="compass" type="Node2D" parent="MainStats/PartyStats"]
+[node name="speedUp" type="Node2D" parent="MainStats/PartyStats"]
 
-[node name="title" type="Label" parent="MainStats/PartyStats/compass"]
+[node name="title" type="Label" parent="MainStats/PartyStats/speedUp"]
 offset_left = 708.0
 offset_top = 100.0
 offset_right = 834.0
 offset_bottom = 119.0
 theme_override_fonts/font = ExtResource("17_bc4kx")
 theme_override_font_sizes/font_size = 16
-text = "Compasses"
+text = "Speed Level"
 metadata/_edit_use_anchors_ = true
 
-[node name="value" type="Label" parent="MainStats/PartyStats/compass"]
+[node name="value" type="Label" parent="MainStats/PartyStats/speedUp"]
 offset_left = 778.0
 offset_top = 100.0
 offset_right = 943.0
@@ -379,6 +379,31 @@ offset_bottom = 119.0
 theme_override_fonts/font = ExtResource("17_bc4kx")
 theme_override_font_sizes/font_size = 16
 text = "2"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="milesToNext" type="Node2D" parent="MainStats"]
+visible = false
+
+[node name="value" type="Label" parent="MainStats/milesToNext"]
+offset_left = 272.0
+offset_top = 80.0
+offset_right = 684.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "57"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="units" type="Label" parent="MainStats/milesToNext"]
+offset_left = 272.0
+offset_top = 98.0
+offset_right = 684.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("17_bc4kx")
+theme_override_font_sizes/font_size = 16
+text = "to next Oregon"
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
@@ -465,19 +490,19 @@ text = "23.43"
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Time" type="Node2D" parent="Stats"]
+[node name="Oregons" type="Node2D" parent="Stats"]
 visible = false
 position = Vector2(30, 240)
 
-[node name="title" type="Label" parent="Stats/Time"]
+[node name="title" type="Label" parent="Stats/Oregons"]
 offset_right = 70.0
 offset_bottom = 19.0
 theme_override_fonts/font = ExtResource("17_bc4kx")
 theme_override_font_sizes/font_size = 16
-text = "Time"
+text = "Oregons"
 metadata/_edit_use_anchors_ = true
 
-[node name="value" type="Label" parent="Stats/Time"]
+[node name="value" type="Label" parent="Stats/Oregons"]
 offset_left = 51.0
 offset_right = 216.0
 offset_bottom = 19.0
@@ -834,47 +859,51 @@ tipName = "oxen"
 position = Vector2(23.5, 4.5)
 shape = SubResource("RectangleShape2D_bj8v4")
 
-[node name="hunter" type="Node2D" parent="Store/Items"]
+[node name="clickUp" type="Node2D" parent="Store/Items"]
+visible = false
 position = Vector2(714, 318)
 
-[node name="title" type="Label" parent="Store/Items/hunter"]
+[node name="title" type="Label" parent="Store/Items/clickUp"]
 offset_right = 70.0
 offset_bottom = 19.0
 theme_override_fonts/font = ExtResource("17_bc4kx")
 theme_override_font_sizes/font_size = 16
-text = "Hunter"
+text = "Click +"
 metadata/_edit_use_anchors_ = true
 
-[node name="PriceButton" parent="Store/Items/hunter" instance=ExtResource("21_ic6vl")]
+[node name="PriceButton" parent="Store/Items/clickUp" instance=ExtResource("21_ic6vl")]
 position = Vector2(162, -8)
 
-[node name="tooltipArea" parent="Store/Items/hunter" instance=ExtResource("23_bgddl")]
-tipName = "hunter"
+[node name="tooltipArea" parent="Store/Items/clickUp" instance=ExtResource("23_bgddl")]
+tipName = "speedUp"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/hunter/tooltipArea"]
-position = Vector2(38.5, 5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/clickUp/tooltipArea"]
+position = Vector2(46, 5)
 shape = SubResource("RectangleShape2D_2lcja")
+disabled = true
 
-[node name="compass" type="Node2D" parent="Store/Items"]
+[node name="speedUp" type="Node2D" parent="Store/Items"]
+visible = false
 position = Vector2(714, 360)
 
-[node name="title" type="Label" parent="Store/Items/compass"]
+[node name="title" type="Label" parent="Store/Items/speedUp"]
 offset_right = 70.0
 offset_bottom = 19.0
 theme_override_fonts/font = ExtResource("17_bc4kx")
 theme_override_font_sizes/font_size = 16
-text = "Compass"
+text = "Speed +"
 metadata/_edit_use_anchors_ = true
 
-[node name="PriceButton" parent="Store/Items/compass" instance=ExtResource("21_ic6vl")]
+[node name="PriceButton" parent="Store/Items/speedUp" instance=ExtResource("21_ic6vl")]
 position = Vector2(162, -8)
 
-[node name="tooltipArea" parent="Store/Items/compass" instance=ExtResource("23_bgddl")]
-tipName = "compass"
+[node name="tooltipArea" parent="Store/Items/speedUp" instance=ExtResource("23_bgddl")]
+tipName = "clickUp"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/compass/tooltipArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/speedUp/tooltipArea"]
 position = Vector2(47.5, 6.5)
 shape = SubResource("RectangleShape2D_kf606")
+disabled = true
 
 [node name="Upgrades2" parent="Store" instance=ExtResource("22_twkgi")]
 visible = false
@@ -891,6 +920,7 @@ text = "Store"
 metadata/_edit_use_anchors_ = true
 
 [node name="Upgrades" type="Label" parent="Store"]
+visible = false
 offset_left = 714.0
 offset_top = 434.0
 offset_right = 882.0
@@ -901,6 +931,7 @@ text = "Upgrades"
 metadata/_edit_use_anchors_ = true
 
 [node name="NewUpgrades" type="Node2D" parent="Store"]
+visible = false
 position = Vector2(714, 474)
 
 [node name="upgradeButton" type="Sprite2D" parent="Store/NewUpgrades"]
@@ -931,11 +962,13 @@ horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="tooltipArea" parent="Store/NewUpgrades/upgradeButton" instance=ExtResource("23_bgddl")]
-tipName = "foodRate"
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Store/NewUpgrades/upgradeButton/tooltipArea"]
+visible = false
 position = Vector2(108, 14.5)
 shape = SubResource("RectangleShape2D_ms0lt")
+disabled = true
 
 [node name="tooltip" parent="." instance=ExtResource("24_khkup")]
 
@@ -946,6 +979,6 @@ shape = SubResource("RectangleShape2D_ms0lt")
 [editable path="Store/Items/wagon/tooltipArea"]
 [editable path="Store/Items/crew/tooltipArea"]
 [editable path="Store/Items/oxen/tooltipArea"]
-[editable path="Store/Items/hunter/tooltipArea"]
-[editable path="Store/Items/compass/tooltipArea"]
+[editable path="Store/Items/clickUp/tooltipArea"]
+[editable path="Store/Items/speedUp/tooltipArea"]
 [editable path="Store/NewUpgrades/upgradeButton/tooltipArea"]

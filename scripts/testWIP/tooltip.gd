@@ -4,15 +4,17 @@ var areaName = ""
 
 var tips = {
 	"wagon" : "Increase crew capacity",
-	"crew" : "Increase cash chance",
-	"oxen" : "Move automatically",
+	"crew" : "Increase cash found",
+	"oxen" : "Increase move speed",
 	"hunter" : "Increase hunt chance",
 	"compass" : "Increase luck chance",
 	"foodRate" : "Lower food consumption",
 	"food" : "Consumed by personnel",
 	"ammo" : "Consumed by hunters",
 	"parts" : "Consumed by wagons",
-	"raft" : "Prevent wagon loss"
+	"raft" : "Prevent wagon loss",
+	"clickUp" : "Increase click level",
+	"speedUp" : "Increase speed level"
 }
 
 @onready var sprite = $TooltipBorder

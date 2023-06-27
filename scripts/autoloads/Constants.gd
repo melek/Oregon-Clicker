@@ -2,12 +2,14 @@ extends Node2D
 
 const game = {
 	"gameName": "Oregon Clicker",
-	"journeyLength": 2170,
+#	"journeyLength": 2170,
 	"stride": 0.000568182,
 	"stepLength": 4000000,
 	"statUnits": { 
 		"mainStat" : ["Steps to Oregon", "Oregons Discovered"]
 	},
+	
+	
 	
 	
 	# I might want to make this a dict later if the prices are custom

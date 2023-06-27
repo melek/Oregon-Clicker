@@ -25,6 +25,10 @@ func _physics_process(delta):
 				title.set("theme_override_colors/font_color", Color(255, 0, 0))
 			else:
 				title.set("theme_override_colors/font_color", Color(255, 255, 255))
+		elif "threshold" in State.game.store[itemName]:
+			if State.game.progress > State.game.store[itemName].threshold:
+				item.get_node("tooltipArea/CollisionShape2D").disabled = false
+				item.visible = true
 		
 		
 		var newPrice = basePrice * (multiplier**amount)
