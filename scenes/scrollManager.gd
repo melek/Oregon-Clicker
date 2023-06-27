@@ -106,6 +106,7 @@ func onButtonInput(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		var multiplier = State.game.units.clickUp.amount * State.game.units.clickUp.statMulti
 		clickBonus = 1 + multiplier
+		$MoveButton/moveButton/AnimationPlayer.play("clicked")
 
 func checkClickBonus():
 	if clickBonus > 0:
