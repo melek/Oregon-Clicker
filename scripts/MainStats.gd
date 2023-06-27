@@ -4,8 +4,15 @@ func _physics_process(delta):
 	updateMainValue()
 	updatePartyStats()
 	
+func format_main(distance : String) -> String:
+	var i : int = distance.length() - 3
+	while i > 0:
+		distance = distance.insert(i, ",")
+		i = i - 3
+	return distance
+	
 func updateMainValue():
-	$amount.text = "%8.0-f" % (State.game.remaining)
+	$amount.text = format_main("%0.0-f" % (State.game.remaining))
 	$units.text = Constants.game.statUnits.mainStat[0]
 
 func updatePartyStats():
