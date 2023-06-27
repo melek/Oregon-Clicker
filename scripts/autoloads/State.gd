@@ -4,7 +4,7 @@ var save
 
 var game = {
 		"progress" : 0,
-		"remaining" : 3000000,
+		"remaining" : 4000000,
 		"remainingOld" : 2170,
 		"cash" : 0,
 		"moveStats" : {
@@ -22,7 +22,7 @@ var game = {
 				"costMultiplier" : 1.05},
 			"oxen" : {
 				"basePrice" : 7,
-				"costMultiplier" : 1.05},
+				"costMultiplier" : 1.01},
 			"hunter" : {
 				"basePrice" : 10,
 				"costMultiplier" : 1.07},
