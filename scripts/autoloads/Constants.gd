@@ -4,8 +4,9 @@ const game = {
 	"gameName": "Oregon Clicker",
 	"journeyLength": 2170,
 	"stride": 0.000568182,
+	"stepLength": 4000000,
 	"statUnits": { 
-		"mainStat" : ["Miles to Oregon", "Oregons Discovered"]
+		"mainStat" : ["Steps to Oregon", "Oregons Discovered"]
 	},
 	
 	

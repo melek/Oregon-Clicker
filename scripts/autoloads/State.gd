@@ -4,7 +4,8 @@ var save
 
 var game = {
 		"progress" : 0,
-		"remaining" : 2170,
+		"remaining" : 3000000,
+		"remainingOld" : 2170,
 		"cash" : 0,
 		"moveStats" : {
 			"actualSpeed": 0,
@@ -42,7 +43,7 @@ var game = {
 			},
 			"oxen" : {
 				"amount" : 1,
-				"statMulti" : 4,
+				"statMulti" : 3,
 				"consumeMulti" : .1 # Food consumption
 			},
 			"hunter" : {

@@ -5,7 +5,7 @@ func _physics_process(delta):
 	updatePartyStats()
 	
 func updateMainValue():
-	$amount.text = "%8.2-f" % (State.game.remaining)
+	$amount.text = "%8.0-f" % (State.game.remaining)
 	$units.text = Constants.game.statUnits.mainStat[0]
 
 func updatePartyStats():
