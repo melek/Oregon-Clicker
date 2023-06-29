@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccvu4xcaema4l"]
 
-[ext_resource type="Script" path="res://scripts/EventLog.gd" id="1_r5jpu"]
+[ext_resource type="Script" path="res://scripts/main/view/EventLog.gd" id="1_r5jpu"]
 [ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="2_rays3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ql42w"]

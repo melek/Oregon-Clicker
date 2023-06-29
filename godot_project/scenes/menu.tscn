@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwkclo7x5o4pp"]
+[gd_scene load_steps=6 format=3 uid="uid://cwkclo7x5o4pp"]
 
 [ext_resource type="Texture2D" uid="uid://cpcvf50sjbhts" path="res://assets/title.png" id="1_rt73g"]
 [ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="2_gqoyt"]
-[ext_resource type="Script" path="res://newGame.gd" id="3_k6yu5"]
+[ext_resource type="Script" path="res://scripts/menu/newGame.gd" id="3_3ap13"]
+[ext_resource type="PackedScene" uid="uid://ru44jabxwp8t" path="res://scenes/main.tscn" id="4_u6c0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfwes"]
 size = Vector2(245, 62)
@@ -39,7 +40,8 @@ theme_override_fonts/font = ExtResource("2_gqoyt")
 theme_override_font_sizes/font_size = 24
 text = "New Game"
 horizontal_alignment = 1
-script = ExtResource("3_k6yu5")
+script = ExtResource("3_3ap13")
+main_scene = ExtResource("4_u6c0a")
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="newGame"]

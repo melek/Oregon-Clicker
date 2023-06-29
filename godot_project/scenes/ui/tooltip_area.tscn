@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbjaaaso2rc56"]
 
-[ext_resource type="Script" path="res://scenes/tooltip_area.gd" id="1_dc7ea"]
+[ext_resource type="Script" path="res://scripts/main/view/tooltip_area.gd" id="1_dc7ea"]
 
 [node name="tooltipArea" type="Area2D"]
 script = ExtResource("1_dc7ea")

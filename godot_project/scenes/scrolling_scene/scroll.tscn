@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://cyposbb5khle5"]
 
 [ext_resource type="Texture2D" uid="uid://bp4qi8xk6lh7n" path="res://assets/wip/colored/environment/background/skyTest.png" id="1_0gf7q"]
-[ext_resource type="Script" path="res://scenes/scrollManager.gd" id="1_aw4os"]
+[ext_resource type="Script" path="res://scripts/main/game_logic/scrollManager.gd" id="1_aw4os"]
 [ext_resource type="Texture2D" uid="uid://cynqawdxbhowf" path="res://assets/wip/colored/environment/background/plains.png" id="1_vqrd1"]
 [ext_resource type="Texture2D" uid="uid://c1evmtlqa1pi5" path="res://assets/wip/colored/wagon/wagon2.png" id="2_7ag1n"]
 [ext_resource type="Texture2D" uid="uid://w6hhx4xo607j" path="res://assets/wip/colored/environment/foreground/plainsSmall.png" id="2_lauav"]
