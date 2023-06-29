@@ -24,6 +24,7 @@ func add_event(log_text: String):
 	var new_event:Label = Label.new()
 	new_event.label_settings = label_theme
 	new_event.text = prefix + log_text
+	new_event.theme_override_font_sizes.font_size = 16
 	new_event.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
 	if(feedbox.get_child_count() == max_log_length): feedbox.get_child(feedbox.get_child_count() - 1).queue_free()
 	feedbox.add_child(new_event)

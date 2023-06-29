@@ -23,9 +23,10 @@ State="*res://scripts/autoloads/State.gd"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=864
+window/size/viewport_width=696
+window/size/viewport_height=1469
 window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [input]
 
@@ -54,4 +55,5 @@ DEBUG_CASH_1000={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

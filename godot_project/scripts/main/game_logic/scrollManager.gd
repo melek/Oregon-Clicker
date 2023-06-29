@@ -103,10 +103,11 @@ func updateLabel():
 	label.text = "Speed " + str(moveStats.actualSpeed)
 
 func onButtonInput(viewport, event, shape_idx):
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_pressed("click"):
 		var multiplier = State.game.units.clickUp.amount * State.game.units.clickUp.statMulti
 		clickBonus = 1 + multiplier
 		$MoveButton/moveButton/AnimationPlayer.play("clicked")
+		Input.warp_mouse(Vector2(0,0))
 
 func checkClickBonus():
 	if clickBonus > 0:

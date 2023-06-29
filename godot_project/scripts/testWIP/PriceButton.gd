@@ -55,6 +55,7 @@ func checkBuy():
 
 func onBuyClick(viewport, event, shape_idx):
 	checkBuy()
+	Input.warp_mouse(Vector2(0,0))
 	
 
 func buy(item):

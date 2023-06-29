@@ -13,15 +13,15 @@ texture_filter = 1
 
 [node name="title" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(137, 166)
+position = Vector2(5, 391)
 texture = ExtResource("1_rt73g")
 centered = false
 
 [node name="credits" type="Label" parent="."]
-offset_left = 270.0
-offset_top = 506.0
-offset_right = 690.0
-offset_bottom = 544.0
+offset_left = 128.0
+offset_top = 731.0
+offset_right = 562.0
+offset_bottom = 775.0
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_gqoyt")
 theme_override_font_sizes/font_size = 16
@@ -30,31 +30,11 @@ and Lionel Di Giacomo"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="newGame" type="Label" parent="."]
-offset_left = 270.0
-offset_top = 594.0
-offset_right = 690.0
-offset_bottom = 632.0
-theme_override_constants/line_spacing = 6
-theme_override_fonts/font = ExtResource("2_gqoyt")
-theme_override_font_sizes/font_size = 24
-text = "New Game"
-horizontal_alignment = 1
-script = ExtResource("3_3ap13")
-main_scene = ExtResource("4_u6c0a")
-metadata/_edit_use_anchors_ = true
-
-[node name="Area2D" type="Area2D" parent="newGame"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="newGame/Area2D"]
-position = Vector2(208.5, 12)
-shape = SubResource("RectangleShape2D_gfwes")
-
 [node name="madeFor" type="Label" parent="."]
-offset_left = 81.0
-offset_top = 837.0
-offset_right = 879.0
-offset_bottom = 859.0
+offset_left = 40.0
+offset_top = 1062.0
+offset_right = 656.0
+offset_bottom = 1084.0
 theme_override_colors/font_color = Color(0.415686, 0.745098, 0.188235, 1)
 theme_override_constants/line_spacing = 6
 theme_override_fonts/font = ExtResource("2_gqoyt")
@@ -63,6 +43,40 @@ text = "Made for Summer Slow Jams 2023 (Version 1.0)"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="input_event" from="newGame/Area2D" to="newGame" method="onInput"]
-[connection signal="mouse_entered" from="newGame/Area2D" to="newGame" method="mouseHover"]
-[connection signal="mouse_exited" from="newGame/Area2D" to="newGame" method="mouseAway"]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 696.0
+offset_bottom = 1468.0
+
+[node name="newGame" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.198
+anchor_top = 0.626
+anchor_right = 0.802
+anchor_bottom = 0.652
+offset_left = 0.191986
+offset_top = -99.9681
+offset_right = -0.192017
+offset_bottom = -100.136
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("2_gqoyt")
+theme_override_font_sizes/font_size = 24
+text = "New Game"
+horizontal_alignment = 1
+script = ExtResource("3_3ap13")
+main_scene = ExtResource("4_u6c0a")
+
+[node name="Area2D" type="Area2D" parent="Control/newGame"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/newGame/Area2D"]
+position = Vector2(208.5, 12)
+shape = SubResource("RectangleShape2D_gfwes")
+
+[connection signal="input_event" from="Control/newGame/Area2D" to="Control/newGame" method="onInput"]
+[connection signal="mouse_entered" from="Control/newGame/Area2D" to="Control/newGame" method="mouseHover"]
+[connection signal="mouse_exited" from="Control/newGame/Area2D" to="Control/newGame" method="mouseAway"]
