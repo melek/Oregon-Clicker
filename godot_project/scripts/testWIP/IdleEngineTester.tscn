@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7xi7xu5gi6ji"]
+
+[ext_resource type="Script" path="res://scripts/testWIP/IdleEngineTester.gd" id="1_d7du3"]
+[ext_resource type="Script" path="res://scripts/classes/IdleEngine.gd" id="1_tu7p6"]
+[ext_resource type="Script" path="res://scripts/classes/IdleState.gd" id="2_gd8cm"]
+[ext_resource type="Script" path="res://scripts/classes/IdleCurrency.gd" id="3_q8bnt"]
+[ext_resource type="Script" path="res://scripts/classes/IdleGenerator.gd" id="4_kcsca"]
+
+[sub_resource type="Resource" id="Resource_3q0ra"]
+script = ExtResource("3_q8bnt")
+label_singular = "dollar"
+label_plural = "dollars"
+value = 0.0
+
+[sub_resource type="Resource" id="Resource_hbkwx"]
+script = ExtResource("4_kcsca")
+label_singular = "farm"
+label_plural = "farms"
+currency = 0
+quantity = 1
+rate = 1.0
+
+[sub_resource type="Resource" id="Resource_ytmed"]
+script = ExtResource("2_gd8cm")
+currencies = Array[ExtResource("3_q8bnt")]([SubResource("Resource_3q0ra")])
+generators = Array[ExtResource("4_kcsca")]([SubResource("Resource_hbkwx")])
+
+[node name="IdleEngineTester" type="Node2D"]
+script = ExtResource("1_d7du3")
+
+[node name="IdleEngine" type="Node2D" parent="."]
+script = ExtResource("1_tu7p6")
+Idle = SubResource("Resource_ytmed")
