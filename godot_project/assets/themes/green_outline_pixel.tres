@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b5svnaedtunwe"]
+
+[ext_resource type="FontFile" uid="uid://k41whgh8gjtf" path="res://assets/fonts/PrintChar21.ttf" id="1_yrmge"]
+
+[resource]
+Font/fonts/Pixel = ExtResource("1_yrmge")

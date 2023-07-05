@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bds28nusrwp8l"
-path="res://.godot/imported/IdleCurrency_icon.png-19d6394a1648a2f30c7c21a877d3e8d7.ctex"
+uid="uid://cy4lufibsyi1b"
+path="res://.godot/imported/IdleCurrencyRatePair_icon.png-11faabb8114d9595dbfee6d99a2548e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resources/IdleCurrency_icon.png"
-dest_files=["res://.godot/imported/IdleCurrency_icon.png-19d6394a1648a2f30c7c21a877d3e8d7.ctex"]
+source_file="res://addons/idle_engine/resources/icons/IdleCurrencyRatePair_icon.png"
+dest_files=["res://.godot/imported/IdleCurrencyRatePair_icon.png-11faabb8114d9595dbfee6d99a2548e5.ctex"]
 
 [params]
 

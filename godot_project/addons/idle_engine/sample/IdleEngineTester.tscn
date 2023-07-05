@@ -1,0 +1,237 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7xi7xu5gi6ji"]
+
+[ext_resource type="Script" path="res://addons/idle_engine/sample/IdleEngineTester.gd" id="1_om5af"]
+[ext_resource type="Theme" uid="uid://cxujg6mj5rpiu" path="res://addons/idle_engine/sample/sample_resources/idle_sample_theme.tres" id="2_v8wvf"]
+[ext_resource type="Script" path="res://addons/idle_engine/IdleEngine.gd" id="3_l0wx6"]
+[ext_resource type="Resource" uid="uid://byidw41ricvgm" path="res://addons/idle_engine/sample/sample_resources/sample_state_resource.tres" id="3_x0qqw"]
+
+[node name="IdleEngineTester" type="Node2D"]
+script = ExtResource("1_om5af")
+
+[node name="CurrencyList" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 448.0
+theme = ExtResource("2_v8wvf")
+
+[node name="Label" type="Label" parent="CurrencyList"]
+layout_mode = 2
+offset_top = -24.0
+offset_right = 192.0
+offset_bottom = 2.0
+text = "Currencies"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="CurrencyList"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 52.0
+grow_horizontal = 2
+columns = 3
+
+[node name="Label" type="Label" parent="CurrencyList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col1"
+
+[node name="Label2" type="Label" parent="CurrencyList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 2"
+
+[node name="Label3" type="Label" parent="CurrencyList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 3"
+
+[node name="Label5" type="Label" parent="CurrencyList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col1 Val"
+
+[node name="Label6" type="Label" parent="CurrencyList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 2 Val"
+
+[node name="Label4" type="Label" parent="CurrencyList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 3 Val"
+
+[node name="GeneratorList" type="Panel" parent="."]
+offset_left = 288.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 249.0
+theme = ExtResource("2_v8wvf")
+
+[node name="Label" type="Label" parent="GeneratorList"]
+layout_mode = 2
+offset_top = -24.0
+offset_right = 224.0
+offset_bottom = 2.0
+text = "Generators"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="GeneratorList"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+columns = 5
+
+[node name="Label" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col1"
+
+[node name="Label2" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 2"
+
+[node name="Label3" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 3"
+
+[node name="Label4" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 4"
+
+[node name="Label9" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 5"
+
+[node name="Label5" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col1 Val"
+
+[node name="Label8" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Col2 Row1 Val1
+Col2 Row1 Val2
+"
+
+[node name="Label6" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 3 Val"
+
+[node name="Label7" type="Label" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 4 Val"
+
+[node name="Button" type="Button" parent="GeneratorList/GridContainer"]
+layout_mode = 2
+disabled = true
+text = "Col 5 Val"
+
+[node name="MultiplierList" type="Panel" parent="."]
+offset_left = 288.0
+offset_top = 280.0
+offset_right = 832.0
+offset_bottom = 448.0
+theme = ExtResource("2_v8wvf")
+
+[node name="Label" type="Label" parent="MultiplierList"]
+layout_mode = 2
+offset_top = -24.0
+offset_right = 224.0
+offset_bottom = 2.0
+text = "Multipliers"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MultiplierList"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+columns = 5
+
+[node name="Label" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col1"
+
+[node name="Label2" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 2"
+
+[node name="Label3" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 3"
+
+[node name="Label4" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 4"
+
+[node name="Label9" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 5"
+
+[node name="Label5" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col1 Val"
+
+[node name="Label8" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Col2 Row1 Val1
+Col2 Row1 Val2
+"
+
+[node name="Label6" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 3 Val"
+
+[node name="Label7" type="Label" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Col 4 Val"
+
+[node name="Button" type="Button" parent="MultiplierList/GridContainer"]
+layout_mode = 2
+text = "Col 5 Val"
+
+[node name="IdleEngine" type="Node2D" parent="."]
+script = ExtResource("3_l0wx6")
+state = ExtResource("3_x0qqw")

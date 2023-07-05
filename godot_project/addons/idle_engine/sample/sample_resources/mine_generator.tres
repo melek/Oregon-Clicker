@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="IdleGenerator" load_steps=8 format=3 uid="uid://1e4jl8ip6x4p"]
+
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleGenerator.gd" id="1_idqca"]
+[ext_resource type="Resource" uid="uid://1ymsgrbsr05q" path="res://addons/idle_engine/sample/sample_resources/dollar_currency.tres" id="1_tskwo"]
+[ext_resource type="Resource" uid="uid://c7sjkyihdo72t" path="res://addons/idle_engine/sample/sample_resources/material_currency.tres" id="1_ywyt6"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleCost.gd" id="2_gf231"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleCurrencyRatePair.gd" id="2_mebre"]
+
+[sub_resource type="Resource" id="Resource_kxvui"]
+script = ExtResource("2_gf231")
+currency = ExtResource("1_tskwo")
+base_cost = 500.0
+exponent = 2.0
+
+[sub_resource type="Resource" id="Resource_hhpyn"]
+script = ExtResource("2_mebre")
+currency = ExtResource("1_ywyt6")
+rate = 1.0
+
+[resource]
+script = ExtResource("1_idqca")
+label_singular = "mine"
+label_plural = "mines"
+currency_rates = Array[ExtResource("2_mebre")]([SubResource("Resource_hhpyn")])
+costs = Array[ExtResource("2_gf231")]([SubResource("Resource_kxvui")])
+quantity = 0

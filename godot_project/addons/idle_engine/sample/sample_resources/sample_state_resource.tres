@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="IdleState" load_steps=21 format=3 uid="uid://byidw41ricvgm"]
+
+[ext_resource type="Resource" uid="uid://1ymsgrbsr05q" path="res://addons/idle_engine/sample/sample_resources/dollar_currency.tres" id="1_s4l22"]
+[ext_resource type="Resource" uid="uid://c7sjkyihdo72t" path="res://addons/idle_engine/sample/sample_resources/material_currency.tres" id="2_d42rg"]
+[ext_resource type="Resource" uid="uid://55fyudhiuvrb" path="res://addons/idle_engine/sample/sample_resources/farm_generator.tres" id="3_sxla0"]
+[ext_resource type="Resource" uid="uid://1e4jl8ip6x4p" path="res://addons/idle_engine/sample/sample_resources/mine_generator.tres" id="4_it3ko"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleCost.gd" id="5_dxdfq"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleGeneratorFactorPair.gd" id="5_yfsyb"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleMultiplier.gd" id="6_wfcsj"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleState.gd" id="7_eonr1"]
+
+[sub_resource type="Resource" id="Resource_cg8xg"]
+script = ExtResource("5_dxdfq")
+currency = ExtResource("1_s4l22")
+base_cost = 5.0
+exponent = 0.0
+
+[sub_resource type="Resource" id="Resource_p74xt"]
+script = ExtResource("5_yfsyb")
+generator = ExtResource("3_sxla0")
+factor = 2.0
+
+[sub_resource type="Resource" id="Resource_8k3el"]
+script = ExtResource("5_yfsyb")
+generator = ExtResource("4_it3ko")
+factor = 2.0
+
+[sub_resource type="Resource" id="Resource_culku"]
+script = ExtResource("6_wfcsj")
+label_singular = "worker"
+label_plural = "workers"
+generator_factors = Array[ExtResource("5_yfsyb")]([SubResource("Resource_p74xt"), SubResource("Resource_8k3el")])
+costs = Array[ExtResource("5_dxdfq")]([SubResource("Resource_cg8xg")])
+quantity = 0
+
+[sub_resource type="Resource" id="Resource_ssc1d"]
+script = ExtResource("5_dxdfq")
+currency = ExtResource("1_s4l22")
+base_cost = 100.0
+exponent = 2.0
+
+[sub_resource type="Resource" id="Resource_kyfp6"]
+script = ExtResource("5_dxdfq")
+currency = ExtResource("2_d42rg")
+base_cost = 10.0
+exponent = 2.0
+
+[sub_resource type="Resource" id="Resource_h14p6"]
+script = ExtResource("5_yfsyb")
+generator = ExtResource("3_sxla0")
+factor = 10.0
+
+[sub_resource type="Resource" id="Resource_y3gd5"]
+script = ExtResource("6_wfcsj")
+label_singular = "tractor"
+label_plural = "tractors"
+generator_factors = Array[ExtResource("5_yfsyb")]([SubResource("Resource_h14p6")])
+costs = Array[ExtResource("5_dxdfq")]([SubResource("Resource_ssc1d"), SubResource("Resource_kyfp6")])
+quantity = 0
+
+[sub_resource type="Resource" id="Resource_l8er3"]
+script = ExtResource("5_dxdfq")
+currency = ExtResource("1_s4l22")
+base_cost = 150.0
+exponent = 2.0
+
+[sub_resource type="Resource" id="Resource_xq07u"]
+script = ExtResource("5_dxdfq")
+currency = ExtResource("2_d42rg")
+base_cost = 10.0
+exponent = 3.0
+
+[sub_resource type="Resource" id="Resource_gykt2"]
+script = ExtResource("5_yfsyb")
+generator = ExtResource("4_it3ko")
+factor = 10.0
+
+[sub_resource type="Resource" id="Resource_vosnp"]
+script = ExtResource("6_wfcsj")
+label_singular = "level deep"
+label_plural = "levels deep"
+generator_factors = Array[ExtResource("5_yfsyb")]([SubResource("Resource_gykt2")])
+costs = Array[ExtResource("5_dxdfq")]([SubResource("Resource_l8er3"), SubResource("Resource_xq07u")])
+quantity = 0
+
+[resource]
+script = ExtResource("7_eonr1")
+currencies = Array[Resource("res://addons/idle_engine/resources/IdleCurrency.gd")]([ExtResource("1_s4l22"), ExtResource("2_d42rg")])
+generators = Array[Resource("res://addons/idle_engine/resources/IdleGenerator.gd")]([ExtResource("3_sxla0"), ExtResource("4_it3ko")])
+multipliers = Array[ExtResource("6_wfcsj")]([SubResource("Resource_culku"), SubResource("Resource_y3gd5"), SubResource("Resource_vosnp")])

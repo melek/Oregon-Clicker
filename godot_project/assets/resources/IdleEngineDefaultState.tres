@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IdleState" load_steps=4 format=3 uid="uid://bd4vtpgicidts"]
+
+[ext_resource type="Resource" uid="uid://cmap2mrvqqunp" path="res://assets/resources/currencies/dollar.tres" id="1_upr5m"]
+[ext_resource type="Resource" uid="uid://bya0b4vyecnq4" path="res://assets/resources/generators/crewmember.tres" id="2_axtpc"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleState.gd" id="3_aylfi"]
+
+[resource]
+script = ExtResource("3_aylfi")
+currencies = Array[Resource("res://scripts/classes/IdleCurrency.gd")]([ExtResource("1_upr5m")])
+generators = Array[Resource("res://scripts/classes/IdleGenerator.gd")]([ExtResource("2_axtpc")])
+modifiers = Array[Resource("res://scripts/classes/IdleMultiplier.gd")]([])

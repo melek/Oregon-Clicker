@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="IdleGenerator" load_steps=7 format=3 uid="uid://55fyudhiuvrb"]
+
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleGenerator.gd" id="1_eljd0"]
+[ext_resource type="Resource" uid="uid://1ymsgrbsr05q" path="res://addons/idle_engine/sample/sample_resources/dollar_currency.tres" id="1_hk5x5"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleCost.gd" id="2_m3tr3"]
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleCurrencyRatePair.gd" id="3_tmlwr"]
+
+[sub_resource type="Resource" id="Resource_sfn8d"]
+script = ExtResource("2_m3tr3")
+currency = ExtResource("1_hk5x5")
+base_cost = 1.0
+exponent = 2.0
+
+[sub_resource type="Resource" id="Resource_c60e2"]
+script = ExtResource("3_tmlwr")
+currency = ExtResource("1_hk5x5")
+rate = 1.0
+
+[resource]
+script = ExtResource("1_eljd0")
+label_singular = "farm"
+label_plural = "farms"
+currency_rates = Array[ExtResource("3_tmlwr")]([SubResource("Resource_c60e2")])
+costs = Array[ExtResource("2_m3tr3")]([SubResource("Resource_sfn8d")])
+quantity = 1

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IdleCurrency" load_steps=2 format=3 uid="uid://c7sjkyihdo72t"]
+
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleCurrency.gd" id="1_inrcq"]
+
+[resource]
+script = ExtResource("1_inrcq")
+label_singular = "material"
+label_plural = "materials"
+amount = 0.0

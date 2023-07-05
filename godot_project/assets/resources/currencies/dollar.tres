@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IdleCurrency" load_steps=2 format=3 uid="uid://cmap2mrvqqunp"]
+
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleCurrency.gd" id="1_tyx5l"]
+
+[resource]
+script = ExtResource("1_tyx5l")
+label_singular = "dollar"
+label_plural = "dollars"
+value = 0.0

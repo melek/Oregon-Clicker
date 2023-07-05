@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IdleGenerator" load_steps=2 format=3 uid="uid://bya0b4vyecnq4"]
+
+[ext_resource type="Script" path="res://addons/idle_engine/resources/IdleGenerator.gd" id="2_5vrq6"]
+
+[resource]
+script = ExtResource("2_5vrq6")
+label_singular = "crewmember"
+label_plural = "crewmembers"
+currencies = Array[Resource("res://scripts/classes/IdleCurrency.gd")]([])
+quantity = 0
+rate = 0.0
