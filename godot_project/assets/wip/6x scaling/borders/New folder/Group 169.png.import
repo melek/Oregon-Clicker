@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by06r2yhpyf2m"
-path="res://.godot/imported/Group 169.png-e5e8aa41d57f37090c86ca355a003c33.ctex"
+path="res://.godot/imported/Group 169.png-a50c81a016d1ad24703549b2f1728f4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/6x scaling/borders/android/Group 169.png"
-dest_files=["res://.godot/imported/Group 169.png-e5e8aa41d57f37090c86ca355a003c33.ctex"]
+source_file="res://assets/wip/6x scaling/borders/New folder/Group 169.png"
+dest_files=["res://.godot/imported/Group 169.png-a50c81a016d1ad24703549b2f1728f4b.ctex"]
 
 [params]
 

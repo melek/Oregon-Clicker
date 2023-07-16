@@ -30,7 +30,7 @@ func _process(delta):
 
 
 func checkBuy():
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_pressed("click"):
 		
 		
 		var item = get_parent().get_name()

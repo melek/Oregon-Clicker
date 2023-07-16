@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5gj3ioduui48"
-path="res://.godot/imported/Rectangle 227.png-3a13ca73b2904ee87591e4374fe70dcd.ctex"
+path="res://.godot/imported/Rectangle 227.png-bc92e1260e76ccf5efa9b1fa8131a854.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wip/6x scaling/borders/android/Rectangle 227.png"
-dest_files=["res://.godot/imported/Rectangle 227.png-3a13ca73b2904ee87591e4374fe70dcd.ctex"]
+source_file="res://assets/wip/6x scaling/borders/New folder/Rectangle 227.png"
+dest_files=["res://.godot/imported/Rectangle 227.png-bc92e1260e76ccf5efa9b1fa8131a854.ctex"]
 
 [params]
 
