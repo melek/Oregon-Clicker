@@ -195,10 +195,10 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollingView/Party/wagon"]
 root_node = NodePath("../../oxen")
-autoplay = "scroll"
 libraries = {
 "": SubResource("AnimationLibrary_4srhr")
 }
+autoplay = "scroll"
 
 [node name="oxen" type="Sprite2D" parent="ScrollingView/Party"]
 position = Vector2(76.472, 83.1111)
@@ -207,10 +207,10 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollingView/Party/oxen"]
 root_node = NodePath("../../wagon")
-autoplay = "scroll"
 libraries = {
 "": SubResource("AnimationLibrary_lf8c5")
 }
+autoplay = "scroll"
 
 [node name="Map" type="Node2D" parent="."]
 script = ExtResource("13_vi6ko")
