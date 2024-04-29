@@ -221,7 +221,6 @@ offset_top = 147.0
 offset_right = 345.0
 offset_bottom = 187.0
 scale = Vector2(6, 6)
-value = 6.0
 fill_mode = 1
 texture_progress = ExtResource("14_bentl")
 metadata/_edit_use_anchors_ = true
