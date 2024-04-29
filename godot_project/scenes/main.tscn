@@ -875,7 +875,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(162, -8)
 
 [node name="tooltipArea" parent="Store/Items/clickUp" instance=ExtResource("23_bgddl")]
-tipName = "speedUp"
+tipName = "clickUp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/clickUp/tooltipArea"]
 position = Vector2(46, 5)
@@ -898,7 +898,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(162, -8)
 
 [node name="tooltipArea" parent="Store/Items/speedUp" instance=ExtResource("23_bgddl")]
-tipName = "clickUp"
+tipName = "speedUp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/speedUp/tooltipArea"]
 position = Vector2(47.5, 6.5)
