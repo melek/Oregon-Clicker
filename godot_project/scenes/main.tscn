@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ru44jabxwp8t"]
+[gd_scene load_steps=51 format=3 uid="uid://ru44jabxwp8t"]
 
 [ext_resource type="Script" path="res://scripts/main/main.gd" id="1_8cncc"]
 [ext_resource type="Texture2D" uid="uid://cykgoobxdus1f" path="res://assets/wip/6x scaling/borders/mainMaskBorder.png" id="1_d5j0n"]
@@ -32,6 +32,7 @@
 [ext_resource type="Script" path="res://scripts/main/view/Store.gd" id="27_ele6p"]
 [ext_resource type="Script" path="res://scripts/main/game_logic/Events.gd" id="27_k8okl"]
 [ext_resource type="PackedScene" uid="uid://ccvu4xcaema4l" path="res://scenes/ui/EventLog.tscn" id="28_oc5b4"]
+[ext_resource type="Texture2D" uid="uid://4j73pggy7gno" path="res://assets/wip/colored/UI/infoLogo.png" id="30_ecn4v"]
 
 [sub_resource type="Animation" id="Animation_txamw"]
 length = 0.001
@@ -127,19 +128,19 @@ size = Vector2(86, 31)
 size = Vector2(90, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rc36j"]
-size = Vector2(85, 24)
+size = Vector2(111, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3o5f"]
-size = Vector2(70, 22)
+size = Vector2(93, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bj8v4"]
-size = Vector2(67, 29)
+size = Vector2(94, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lcja"]
-size = Vector2(112, 30)
+size = Vector2(144, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf606"]
-size = Vector2(115, 33)
+size = Vector2(142, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ms0lt"]
 size = Vector2(236, 49)
@@ -813,8 +814,12 @@ position = Vector2(162, -8)
 tipName = "wagon"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/wagon/tooltipArea"]
-position = Vector2(30.5, 8)
+position = Vector2(43.5, 8)
 shape = SubResource("RectangleShape2D_rc36j")
+
+[node name="info" type="Sprite2D" parent="Store/Items/wagon/tooltipArea"]
+position = Vector2(86, 9)
+texture = ExtResource("30_ecn4v")
 
 [node name="crew" type="Node2D" parent="Store/Items"]
 position = Vector2(714, 234)
@@ -834,8 +839,12 @@ position = Vector2(162, -8)
 tipName = "crew"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/crew/tooltipArea"]
-position = Vector2(25, 7)
+position = Vector2(36.5, 7)
 shape = SubResource("RectangleShape2D_d3o5f")
+
+[node name="info" type="Sprite2D" parent="Store/Items/crew/tooltipArea"]
+position = Vector2(70, 7)
+texture = ExtResource("30_ecn4v")
 
 [node name="oxen" type="Node2D" parent="Store/Items"]
 position = Vector2(714, 276)
@@ -855,8 +864,12 @@ position = Vector2(162, -8)
 tipName = "oxen"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/oxen/tooltipArea"]
-position = Vector2(23.5, 4.5)
+position = Vector2(37, 4.5)
 shape = SubResource("RectangleShape2D_bj8v4")
+
+[node name="info" type="Sprite2D" parent="Store/Items/oxen/tooltipArea"]
+position = Vector2(71, 7)
+texture = ExtResource("30_ecn4v")
 
 [node name="clickUp" type="Node2D" parent="Store/Items"]
 visible = false
@@ -877,9 +890,13 @@ position = Vector2(162, -8)
 tipName = "clickUp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/clickUp/tooltipArea"]
-position = Vector2(46, 5)
+position = Vector2(62, 5)
 shape = SubResource("RectangleShape2D_2lcja")
 disabled = true
+
+[node name="info" type="Sprite2D" parent="Store/Items/clickUp"]
+position = Vector2(114, 7)
+texture = ExtResource("30_ecn4v")
 
 [node name="speedUp" type="Node2D" parent="Store/Items"]
 visible = false
@@ -900,9 +917,13 @@ position = Vector2(162, -8)
 tipName = "speedUp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Store/Items/speedUp/tooltipArea"]
-position = Vector2(47.5, 6.5)
+position = Vector2(61, 6.5)
 shape = SubResource("RectangleShape2D_kf606")
 disabled = true
+
+[node name="info" type="Sprite2D" parent="Store/Items/speedUp/tooltipArea"]
+position = Vector2(114, 7)
+texture = ExtResource("30_ecn4v")
 
 [node name="Upgrades2" parent="Store" instance=ExtResource("22_twkgi")]
 visible = false
