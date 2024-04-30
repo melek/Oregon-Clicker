@@ -147,6 +147,12 @@ var game = {
 				"effects" : null,
 				"active" : true
 			},
+			{
+				"value": 20000,
+				"log" : "You are approaching ludicrous speeds!",
+				"effects" : null,
+				"active" : true
+			},
 		],
 		"randomEvents" : {
 			"random" : {
