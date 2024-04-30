@@ -148,7 +148,7 @@ var game = {
 				"active" : true
 			},
 			{
-				"value": 8000,
+				"value": 20000,
 				"log" : "You are approaching ludicrous speeds!",
 				"effects" : null,
 				"active" : true
